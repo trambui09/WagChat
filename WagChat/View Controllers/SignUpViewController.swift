@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
+
 
 class SignUpViewController: UIViewController {
 
@@ -61,8 +65,59 @@ class SignUpViewController: UIViewController {
     }
     */
     
+    // check the fields if everything is correct, if fine, return nil, else return the error msg
+    func validateFields() -> String? {
+        
+        // check that all fields are filled in
+        
+        if usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || locationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || dogInfoTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || topicsTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Please fill in all fields"
+        }
+        
+        // check is password is secure
+        
+        let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(cleanPassword) == false {
+            // password isn't secured enough
+            return "Please make sure you password is at least 8 characters, contains a special character and a number."
+        }
+        
+        return nil
+    }
+    
     
     @IBAction func signUpTapped(_ sender: Any) {
+        // validate the feilds
+        let error = validateFields()
+        
+        if error != nil {
+            showError(error!)
+        }
+        else {
+            Auth.auth().createUser(withEmail: "", password: "") { (results, err) in
+                // check if errors
+                if err != nil {
+                    // there was an error
+                    self.showError("Error creating user")
+                }
+                else {
+                    // user was created good! now store
+                   
+                    
+                }
+            }
+        }
+        // create the user
+        
+        // transition to the home screen
+        
     }
+    
+    func showError(_ message:String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+    
     
 }

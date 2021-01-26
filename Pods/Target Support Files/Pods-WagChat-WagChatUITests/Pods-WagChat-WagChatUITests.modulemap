@@ -1,0 +1,6 @@
+framework module Pods_WagChat_WagChatUITests {
+  umbrella header "Pods-WagChat-WagChatUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

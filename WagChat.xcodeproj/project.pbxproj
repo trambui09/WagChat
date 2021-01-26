@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,12 @@
 		0D0F2B6E25C08FBE0005034B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2B6D25C08FBE0005034B /* LogInViewController.swift */; };
 		0D0F2B7325C08FCE0005034B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2B7225C08FCE0005034B /* HomeViewController.swift */; };
 		0D0F2B8525C0A0CD0005034B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2B8425C0A0CD0005034B /* Utilities.swift */; };
+		0D0F2BE125C0D8400005034B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D0F2BE025C0D8400005034B /* GoogleService-Info.plist */; };
+		0D0F2BE525C0D8C60005034B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D0F2BE025C0D8400005034B /* GoogleService-Info.plist */; };
+		0D0F2BE925C0D8C70005034B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D0F2BE025C0D8400005034B /* GoogleService-Info.plist */; };
+		63559828494339F063E7B0B0 /* Pods_WagChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598E87DE4348357904E75103 /* Pods_WagChatTests.framework */; };
+		8A52816B55F51F68C4E36DA4 /* Pods_WagChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3F77094969178938715844 /* Pods_WagChat.framework */; };
+		CBB7ED599E611848C21FD258 /* Pods_WagChat_WagChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D3C44DF0A26141AA87E544 /* Pods_WagChat_WagChatUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03D3C44DF0A26141AA87E544 /* Pods_WagChat_WagChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChat_WagChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0F2B3225C083160005034B /* WagChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WagChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0F2B3525C083160005034B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D0F2B3725C083160005034B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +64,15 @@
 		0D0F2B6D25C08FBE0005034B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0D0F2B7225C08FCE0005034B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0D0F2B8425C0A0CD0005034B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../../../../../Downloads/CustomLoginDemo/CustomLoginDemo/Helpers/Utilities.swift; sourceTree = "<group>"; };
+		0D0F2BE025C0D8400005034B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		598E87DE4348357904E75103 /* Pods_WagChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat.release.xcconfig"; path = "Target Support Files/Pods-WagChat/Pods-WagChat.release.xcconfig"; sourceTree = "<group>"; };
+		8156C62A4604983120AEC266 /* Pods-WagChat-WagChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat-WagChatUITests.release.xcconfig"; path = "Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		92F435ED2360D1578EA2AD4C /* Pods-WagChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChatTests.release.xcconfig"; path = "Target Support Files/Pods-WagChatTests/Pods-WagChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		9A762D282AADE080AC4ACC69 /* Pods-WagChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat.debug.xcconfig"; path = "Target Support Files/Pods-WagChat/Pods-WagChat.debug.xcconfig"; sourceTree = "<group>"; };
+		ED81A690D8D33F372122D7A3 /* Pods-WagChat-WagChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat-WagChatUITests.debug.xcconfig"; path = "Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F06910C81583AF615B4A1BDB /* Pods-WagChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChatTests.debug.xcconfig"; path = "Target Support Files/Pods-WagChatTests/Pods-WagChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE3F77094969178938715844 /* Pods_WagChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A52816B55F51F68C4E36DA4 /* Pods_WagChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63559828494339F063E7B0B0 /* Pods_WagChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBB7ED599E611848C21FD258 /* Pods_WagChat_WagChatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +110,8 @@
 				0D0F2B3425C083160005034B /* WagChat */,
 				0D0F2B5625C0831B0005034B /* WagChatUITests */,
 				0D0F2B3325C083160005034B /* Products */,
+				BE7EBD44F273C3C70B3346DE /* Pods */,
+				A6882EA72DF169DB2063E1C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +128,7 @@
 		0D0F2B3425C083160005034B /* WagChat */ = {
 			isa = PBXGroup;
 			children = (
+				0D0F2BE025C0D8400005034B /* GoogleService-Info.plist */,
 				0D0F2B7E25C09EDA0005034B /* Helpers */,
 				0D0F2B7725C08FEF0005034B /* View Controllers */,
 				0D0F2B3525C083160005034B /* AppDelegate.swift */,
@@ -156,6 +178,29 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A6882EA72DF169DB2063E1C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE3F77094969178938715844 /* Pods_WagChat.framework */,
+				03D3C44DF0A26141AA87E544 /* Pods_WagChat_WagChatUITests.framework */,
+				598E87DE4348357904E75103 /* Pods_WagChatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE7EBD44F273C3C70B3346DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A762D282AADE080AC4ACC69 /* Pods-WagChat.debug.xcconfig */,
+				6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */,
+				ED81A690D8D33F372122D7A3 /* Pods-WagChat-WagChatUITests.debug.xcconfig */,
+				8156C62A4604983120AEC266 /* Pods-WagChat-WagChatUITests.release.xcconfig */,
+				F06910C81583AF615B4A1BDB /* Pods-WagChatTests.debug.xcconfig */,
+				92F435ED2360D1578EA2AD4C /* Pods-WagChatTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D0F2B5C25C0831B0005034B /* Build configuration list for PBXNativeTarget "WagChat" */;
 			buildPhases = (
+				5CC4C37E64C18CEE65CF7600 /* [CP] Check Pods Manifest.lock */,
 				0D0F2B2E25C083160005034B /* Sources */,
 				0D0F2B2F25C083160005034B /* Frameworks */,
 				0D0F2B3025C083160005034B /* Resources */,
+				D52F1B2E7EA8F4E11ADAECB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D0F2B5F25C0831B0005034B /* Build configuration list for PBXNativeTarget "WagChatTests" */;
 			buildPhases = (
+				F4B44FFF146E5A8299D0B30E /* [CP] Check Pods Manifest.lock */,
 				0D0F2B4425C0831B0005034B /* Sources */,
 				0D0F2B4525C0831B0005034B /* Frameworks */,
 				0D0F2B4625C0831B0005034B /* Resources */,
@@ -198,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D0F2B6225C0831B0005034B /* Build configuration list for PBXNativeTarget "WagChatUITests" */;
 			buildPhases = (
+				0CD6F05722AAC2D1E4F88A99 /* [CP] Check Pods Manifest.lock */,
 				0D0F2B4F25C0831B0005034B /* Sources */,
 				0D0F2B5025C0831B0005034B /* Frameworks */,
 				0D0F2B5125C0831B0005034B /* Resources */,
+				734F27A673026B0D3BB02E2F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +312,7 @@
 				0D0F2B4225C0831A0005034B /* LaunchScreen.storyboard in Resources */,
 				0D0F2B3F25C0831A0005034B /* Assets.xcassets in Resources */,
 				0D0F2B3D25C083160005034B /* Main.storyboard in Resources */,
+				0D0F2BE125C0D8400005034B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0F2BE525C0D8C60005034B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +328,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0F2BE925C0D8C70005034B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CD6F05722AAC2D1E4F88A99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WagChat-WagChatUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CC4C37E64C18CEE65CF7600 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WagChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		734F27A673026B0D3BB02E2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D52F1B2E7EA8F4E11ADAECB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4B44FFF146E5A8299D0B30E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WagChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D0F2B2E25C083160005034B /* Sources */ = {
@@ -465,6 +621,7 @@
 		};
 		0D0F2B5D25C0831B0005034B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A762D282AADE080AC4ACC69 /* Pods-WagChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -484,6 +641,7 @@
 		};
 		0D0F2B5E25C0831B0005034B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +661,7 @@
 		};
 		0D0F2B6025C0831B0005034B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06910C81583AF615B4A1BDB /* Pods-WagChatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,6 +684,7 @@
 		};
 		0D0F2B6125C0831B0005034B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F435ED2360D1578EA2AD4C /* Pods-WagChatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -547,6 +707,7 @@
 		};
 		0D0F2B6325C0831B0005034B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED81A690D8D33F372122D7A3 /* Pods-WagChat-WagChatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -567,6 +728,7 @@
 		};
 		0D0F2B6425C0831B0005034B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8156C62A4604983120AEC266 /* Pods-WagChat-WagChatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
