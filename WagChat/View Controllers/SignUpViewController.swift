@@ -95,7 +95,18 @@ class SignUpViewController: UIViewController {
             showError(error!)
         }
         else {
-            Auth.auth().createUser(withEmail: "", password: "") { (results, err) in
+            
+            // create cleaned versions of the data
+            
+            let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            let location = locationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let dogInfo = dogInfoTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let topics = topicsTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 // check if errors
                 if err != nil {
                     // there was an error
@@ -103,7 +114,16 @@ class SignUpViewController: UIViewController {
                 }
                 else {
                     // user was created good! now store
-                   
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["username":username, "location":location, "dogInfo":dogInfo, "topics":topics, "uid":result!.user.uid]) { (error) in
+                        if error != nil {
+                            // show error message
+                            self.showError("Error saving user data")
+                        }
+                    }
+                    
+                    self.transitionToHome()
                     
                 }
             }
@@ -117,6 +137,15 @@ class SignUpViewController: UIViewController {
     func showError(_ message:String) {
         errorLabel.text = message
         errorLabel.alpha = 1
+    }
+    
+    func transitionToHome() {
+        
+        // reference to HomeVC
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     
