@@ -32,14 +32,24 @@ class HomeViewController: UIViewController {
 
     @IBAction func logOutTapped(_ sender: Any) {
         print("Logging out")
-        
-        let firebaseAuth = Auth.auth()
-        
-      do {
-        try firebaseAuth.signOut()
-      } catch let signOutError as NSError {
-        print ("Error signing out: %@", signOutError)
-      }
-        
+        // check if user is logged in or not
+        // log out via Auth
+        if Auth.auth().currentUser?.uid != nil {
+            let firebaseAuth = Auth.auth()
+            
+            do {
+              try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+              print ("Error signing out: %@", signOutError)
+            }
+            
+            // bring up the welcome screen
+            
+            let welcomeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.welcomeViewController) as? ViewController
+            
+            self.view.window?.rootViewController = welcomeViewController
+            self.view.window?.makeKeyAndVisible()
+            
+        }
     }
 }
