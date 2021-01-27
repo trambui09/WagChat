@@ -18,7 +18,21 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setUpElements()
+        
+        let db = Firestore.firestore()
+        db.collection("users").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+            
+                    
+                }
+            }
+        }
     }
+    
     
     func setUpElements() {
         
