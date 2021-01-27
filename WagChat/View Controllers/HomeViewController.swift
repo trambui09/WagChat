@@ -17,6 +17,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setUpElements()
+    }
+    
+    func setUpElements() {
+        
+        Utilities.styleFilledButton(logOutButton)
+        
     }
     
 
@@ -31,7 +38,17 @@ class HomeViewController: UIViewController {
     */
 
     @IBAction func logOutTapped(_ sender: Any) {
-        print("Logging out")
+        
+//        let user = Auth.auth().currentUser
+//        if let user = user {
+//            let uid = user.uid
+//            let email = user.email
+//            print("The current user email is \(email)")
+//
+//        }
+//
+//        print("Logging out")
+        
         // check if user is logged in or not
         // log out via Auth
         if Auth.auth().currentUser?.uid != nil {
