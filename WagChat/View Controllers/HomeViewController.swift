@@ -18,26 +18,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     //initiate a variable to store users data
-    var userData: [String: String] = [:]
-    
+    var userData: [[String: String]] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        // tableview methods
         tableView.delegate = self
         tableView.dataSource = self
         
         
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return userData.count
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
-            cell?.textLabel?.text = userData[indexPath.row]
-            return cell!
-        }
-    
+      
         // Do any additional setup after loading the view.
         setUpElements()
         
@@ -49,16 +43,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
 //                  print("\(document.data()["username"]!) - \(document.data()["topics"]!)")
-                    let username = document.data()["username"]!
-                    let topic = document.data()["topic"]!
-                    self.userData[username as! String] = topic as? String
-                    
-                    tableView.reloadData()
+                    let username = document.data()["username"] as! String
+                    let topic = document.data()["topics"] as! String
+
+                    let user = ["username": username, "topics": topic]
+                    self.userData.append(user)
                     
                 }
+                self.tableView.reloadData()
             }
         }
     }
+    
+    // table row
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userData.count
+    }
+    // table cell
+    // opened 1 prototype cell - gave reused identifier PostCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
+        let user = userData[indexPath.row]
+        cell?.textLabel?.text = user["username"]
+        return cell!
+    }
+
     
     
     func setUpElements() {
