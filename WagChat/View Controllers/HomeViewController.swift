@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
  
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var chatsButton: UIButton!
     
     //initiate a variable to store users data
     var userData: [[String: String]] = []
@@ -73,6 +74,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setUpElements() {
         
         Utilities.styleFilledButton(logOutButton)
+        
+        Utilities.styleFilledButton(chatsButton)
         
     }
     

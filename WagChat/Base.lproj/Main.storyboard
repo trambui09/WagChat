@@ -299,20 +299,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-O9-sh5">
+                                <rect key="frame" x="287" y="60" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aSR-GV-TyM"/>
+                                </constraints>
+                                <state key="normal" title="Chats"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pY6-4q-H98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tWD-L2-vAl" secondAttribute="bottom" id="5fe-25-jz3"/>
+                            <constraint firstItem="CTW-O9-sh5" firstAttribute="top" secondItem="pY6-4q-H98" secondAttribute="top" constant="60" id="62d-Bc-cfW"/>
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerX" secondItem="wsH-Py-uUD" secondAttribute="centerX" id="CJb-wz-NtD"/>
                             <constraint firstItem="tWD-L2-vAl" firstAttribute="leading" secondItem="pY6-4q-H98" secondAttribute="leading" id="V3P-tu-Ccp"/>
                             <constraint firstItem="tWD-L2-vAl" firstAttribute="top" secondItem="Op3-Qd-H7y" secondAttribute="bottom" constant="10" id="Zdf-cR-J11"/>
                             <constraint firstItem="pY6-4q-H98" firstAttribute="trailing" secondItem="tWD-L2-vAl" secondAttribute="trailing" id="c20-7F-htn"/>
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerY" secondItem="wsH-Py-uUD" secondAttribute="centerY" id="dfU-gR-dxU"/>
                             <constraint firstItem="Op3-Qd-H7y" firstAttribute="top" secondItem="pY6-4q-H98" secondAttribute="top" constant="60" id="f0u-Ng-gAF"/>
+                            <constraint firstItem="pY6-4q-H98" firstAttribute="trailing" secondItem="CTW-O9-sh5" secondAttribute="trailing" constant="27" id="pSI-d6-UMC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chatsButton" destination="CTW-O9-sh5" id="Kfm-yf-VKk"/>
                         <outlet property="logOutButton" destination="Op3-Qd-H7y" id="eHI-z8-FoG"/>
                         <outlet property="tableView" destination="tWD-L2-vAl" id="3Ux-ou-GvR"/>
                     </connections>
@@ -320,6 +330,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoX-wF-jXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2585.507246376812" y="101.90217391304348"/>
+        </scene>
+        <!--Chats View Controller-->
+        <scene sceneID="tov-jx-Qqv">
+            <objects>
+                <viewController storyboardIdentifier="ChatsVC" id="WEK-c0-mwI" customClass="ChatsViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E63-eT-ebj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUb-aW-ttS">
+                                <rect key="frame" x="184.66666666666666" y="357.66666666666669" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="98E-ep-KZB"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="uUb-aW-ttS" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="Ua7-lb-XRE"/>
+                            <constraint firstItem="uUb-aW-ttS" firstAttribute="centerY" secondItem="E63-eT-ebj" secondAttribute="centerY" id="W0q-DP-iir"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0k-il-jS1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3460.8695652173915" y="-178.53260869565219"/>
         </scene>
     </scenes>
     <resources>
