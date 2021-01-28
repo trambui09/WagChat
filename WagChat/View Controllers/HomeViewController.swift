@@ -11,18 +11,33 @@ import Firebase
 import FirebaseDatabase
 
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+ 
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
     //initiate a variable to store users data
     var userData: [String: String] = [:]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return userData.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
+            cell?.textLabel?.text = userData[indexPath.row]
+            return cell!
+        }
     
-    
-
         // Do any additional setup after loading the view.
         setUpElements()
         
@@ -38,7 +53,7 @@ class HomeViewController: UIViewController {
                     let topic = document.data()["topic"]!
                     self.userData[username as! String] = topic as? String
                     
-//                    tableView.reloadData()
+                    tableView.reloadData()
                     
                 }
             }
