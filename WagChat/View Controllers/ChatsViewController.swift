@@ -8,7 +8,8 @@
 import UIKit
 
 class ChatsViewController: UIViewController {
-
+    @IBOutlet weak var wagChatButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,5 +26,11 @@ class ChatsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func wagChatButtonTapped(_ sender: Any) {
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
 
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
 }

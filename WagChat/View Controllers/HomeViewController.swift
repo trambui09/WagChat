@@ -122,4 +122,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
+    
+    @IBAction func chatsButtonTapped(_ sender: Any) {
+        print("Chats button tapped")
+        let chatsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatsViewController) as? ChatsViewController
+
+        self.view.window?.rootViewController = chatsViewController
+        self.view.window?.makeKeyAndVisible()
+
+    }
+    
+    
 }
