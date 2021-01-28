@@ -269,8 +269,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to WagChat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0j-yz-6y1">
-                                <rect key="frame" x="138.33333333333331" y="338" width="137.33333333333331" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0j-yz-6y1">
+                                <rect key="frame" x="207" y="368" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -285,17 +285,36 @@
                                     <action selector="logOutTapped:" destination="PfL-F3-czr" eventType="touchUpInside" id="hhM-Lz-dQT"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tWD-L2-vAl">
+                                <rect key="frame" x="0.0" y="100" width="414" height="636"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" id="BbU-gi-cUB">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BbU-gi-cUB" id="fdo-qI-Xv2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pY6-4q-H98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="tWD-L2-vAl" secondAttribute="bottom" id="5fe-25-jz3"/>
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerX" secondItem="wsH-Py-uUD" secondAttribute="centerX" id="CJb-wz-NtD"/>
+                            <constraint firstItem="tWD-L2-vAl" firstAttribute="leading" secondItem="pY6-4q-H98" secondAttribute="leading" id="V3P-tu-Ccp"/>
+                            <constraint firstItem="tWD-L2-vAl" firstAttribute="top" secondItem="Op3-Qd-H7y" secondAttribute="bottom" constant="10" id="Zdf-cR-J11"/>
+                            <constraint firstItem="pY6-4q-H98" firstAttribute="trailing" secondItem="tWD-L2-vAl" secondAttribute="trailing" id="c20-7F-htn"/>
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerY" secondItem="wsH-Py-uUD" secondAttribute="centerY" id="dfU-gR-dxU"/>
                             <constraint firstItem="Op3-Qd-H7y" firstAttribute="top" secondItem="pY6-4q-H98" secondAttribute="top" constant="60" id="f0u-Ng-gAF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="logOutButton" destination="Op3-Qd-H7y" id="eHI-z8-FoG"/>
+                        <outlet property="tableView" destination="tWD-L2-vAl" id="3Ux-ou-GvR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoX-wF-jXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,17 +8,67 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseDatabase
 
-class HomeViewController: UIViewController {
 
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+ 
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    //initiate a variable to store users data
+    var userData: [[String: String]] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        // tableview methods
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+      
         // Do any additional setup after loading the view.
         setUpElements()
+        
+        let db = Firestore.firestore()
+        db.collection("users").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+//                  print("\(document.data()["username"]!) - \(document.data()["topics"]!)")
+                    let username = document.data()["username"] as! String
+                    let topic = document.data()["topics"] as! String
+
+                    let user = ["username": username, "topics": topic]
+                    self.userData.append(user)
+                    
+                }
+                self.tableView.reloadData()
+            }
+        }
     }
+    
+    // table row
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userData.count
+    }
+    // table cell
+    // opened 1 prototype cell - gave reused identifier PostCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
+        let user = userData[indexPath.row]
+        cell?.textLabel?.text = user["username"]
+        return cell!
+    }
+
+    
     
     func setUpElements() {
         

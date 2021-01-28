@@ -22,6 +22,7 @@ target 'WagChat' do
 	pod 'Firebase/Core'
 	
         pod 'Firebase/Firestore'
+	pod 'Firebase/Database'
 	
 
 # add pods for any other desired Firebase products
