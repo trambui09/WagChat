@@ -8,13 +8,20 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseDatabase
+
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var logOutButton: UIButton!
+    //initiate a variable to store users data
+    var userData: [String: String] = [:]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    
 
         // Do any additional setup after loading the view.
         setUpElements()
@@ -26,7 +33,12 @@ class HomeViewController: UIViewController {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-            
+//                  print("\(document.data()["username"]!) - \(document.data()["topics"]!)")
+                    let username = document.data()["username"]!
+                    let topic = document.data()["topic"]!
+                    self.userData[username as! String] = topic as? String
+                    
+//                    tableView.reloadData()
                     
                 }
             }
