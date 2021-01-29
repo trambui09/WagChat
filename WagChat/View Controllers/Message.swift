@@ -45,6 +45,8 @@ extension Message {
     }
 }
 
+
+// tell messageKit we are implementing text base chat
 extension Message: MessageType {
     
     var sender: SenderType {
