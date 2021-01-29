@@ -25,6 +25,8 @@
 		0D0F2C4125C114560005034B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C4025C114560005034B /* Utilities.swift */; };
 		0D0F2C6625C34C990005034B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C6525C34C990005034B /* ProfileViewController.swift */; };
 		602ED79225C3E77E009447C6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ED79125C3E77E009447C6 /* ChatViewController.swift */; };
+		602ED7B825C4A4AA009447C6 /* chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ED7B725C4A4AA009447C6 /* chat.swift */; };
+		602ED7BD25C4A521009447C6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ED7BC25C4A521009447C6 /* Message.swift */; };
 		63559828494339F063E7B0B0 /* Pods_WagChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598E87DE4348357904E75103 /* Pods_WagChatTests.framework */; };
 		8A52816B55F51F68C4E36DA4 /* Pods_WagChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3F77094969178938715844 /* Pods_WagChat.framework */; };
 		CBB7ED599E611848C21FD258 /* Pods_WagChat_WagChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D3C44DF0A26141AA87E544 /* Pods_WagChat_WagChatUITests.framework */; };
@@ -72,6 +74,8 @@
 		0D0F2C6525C34C990005034B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		598E87DE4348357904E75103 /* Pods_WagChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		602ED79125C3E77E009447C6 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		602ED7B725C4A4AA009447C6 /* chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chat.swift; sourceTree = "<group>"; };
+		602ED7BC25C4A521009447C6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat.release.xcconfig"; path = "Target Support Files/Pods-WagChat/Pods-WagChat.release.xcconfig"; sourceTree = "<group>"; };
 		8156C62A4604983120AEC266 /* Pods-WagChat-WagChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat-WagChatUITests.release.xcconfig"; path = "Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		92F435ED2360D1578EA2AD4C /* Pods-WagChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChatTests.release.xcconfig"; path = "Target Support Files/Pods-WagChatTests/Pods-WagChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				0D0F2B3925C083160005034B /* ViewController.swift */,
 				0D0F2C6525C34C990005034B /* ProfileViewController.swift */,
 				602ED79125C3E77E009447C6 /* ChatViewController.swift */,
+				602ED7B725C4A4AA009447C6 /* chat.swift */,
+				602ED7BC25C4A521009447C6 /* Message.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -492,9 +498,11 @@
 				0D0F2B6925C08FA30005034B /* SignUpViewController.swift in Sources */,
 				0D0F2B6E25C08FBE0005034B /* LogInViewController.swift in Sources */,
 				0D0F2B3825C083160005034B /* SceneDelegate.swift in Sources */,
+				602ED7B825C4A4AA009447C6 /* chat.swift in Sources */,
 				0D0F2B7325C08FCE0005034B /* HomeViewController.swift in Sources */,
 				0D0F2C4125C114560005034B /* Utilities.swift in Sources */,
 				0D0F2C6625C34C990005034B /* ProfileViewController.swift in Sources */,
+				602ED7BD25C4A521009447C6 /* Message.swift in Sources */,
 				602ED79225C3E77E009447C6 /* ChatViewController.swift in Sources */,
 				0D0F2BF125C0DF380005034B /* Constants.swift in Sources */,
 			);
