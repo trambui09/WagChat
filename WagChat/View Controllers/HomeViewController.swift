@@ -68,6 +68,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell?.textLabel?.text = user["username"]
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = userData[indexPath.row]
+        print(user["username"]!)
+        
+        let chatsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatsViewController) as? ChatsViewController
+
+        self.view.window?.rootViewController = chatsViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
 
     
     
