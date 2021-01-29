@@ -304,7 +304,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="aSR-GV-TyM"/>
                                 </constraints>
-                                <state key="normal" title="Chats"/>
+                                <state key="normal" title="Profile"/>
                                 <connections>
                                     <action selector="chatsButtonTapped:" destination="PfL-F3-czr" eventType="touchUpInside" id="Sco-3X-9Kx"/>
                                 </connections>
@@ -335,16 +335,16 @@
             </objects>
             <point key="canvasLocation" x="3492.753623188406" y="101.90217391304348"/>
         </scene>
-        <!--Chats View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="tov-jx-Qqv">
             <objects>
-                <viewController storyboardIdentifier="ChatsVC" id="WEK-c0-mwI" customClass="ChatsViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="WEK-c0-mwI" customClass="ProfileViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E63-eT-ebj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUb-aW-ttS">
-                                <rect key="frame" x="184.66666666666666" y="357.66666666666669" width="45" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUb-aW-ttS">
+                                <rect key="frame" x="182.66666666666666" y="357.66666666666669" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

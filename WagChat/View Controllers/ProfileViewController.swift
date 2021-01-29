@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatsViewController: UIViewController {
+class ProfileViewController: UIViewController {
     @IBOutlet weak var wagChatButton: UIButton!
     
     override func viewDidLoad() {
