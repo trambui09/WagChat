@@ -375,6 +375,21 @@
             </objects>
             <point key="canvasLocation" x="4368.115942028986" y="-178.53260869565219"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="FMD-2F-g8o">
+            <objects>
+                <viewController id="vFw-Xn-6Hs" customClass="ChatViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FvV-PB-5yk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9Jg-6t-L7l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAc-ad-u5b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4401" y="489"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="C5j-F1-0hC">
             <objects>

@@ -23,6 +23,9 @@ target 'WagChat' do
 	
         pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
+	pod 'MessageKit'
+	pod 'SDWebImage'
+	pod 'GoogleSignIn'
 	
 
 # add pods for any other desired Firebase products
