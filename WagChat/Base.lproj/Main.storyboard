@@ -309,6 +309,14 @@
                                     <action selector="chatsButtonTapped:" destination="PfL-F3-czr" eventType="touchUpInside" id="Sco-3X-9Kx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mix-kw-y7d">
+                                <rect key="frame" x="187" y="104" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Chats"/>
+                                <connections>
+                                    <segue destination="ylk-et-1Xd" kind="show" id="wdG-m4-pJg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pY6-4q-H98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -334,6 +342,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoX-wF-jXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3492.753623188406" y="101.90217391304348"/>
+        </scene>
+        <!--Chats View Controller-->
+        <scene sceneID="cbN-vr-K90">
+            <objects>
+                <viewController id="ylk-et-1Xd" customClass="ChatsViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JUr-BU-iRG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lng-lw-XeC">
+                                <rect key="frame" x="145" y="337" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="ylk-et-1Xd" eventType="touchUpInside" id="ZCW-Ar-Nx8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e9p-M9-rU6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="d5O-Sj-wCX"/>
+                    <connections>
+                        <outlet property="addButton" destination="Lng-lw-XeC" id="ZkA-Of-pdK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AAr-0I-NVC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4355" y="542"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="tov-jx-Qqv">
