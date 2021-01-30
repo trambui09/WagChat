@@ -32,7 +32,6 @@ class LogInViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
-        
     }
     
     
@@ -44,7 +43,6 @@ class LogInViewController: UIViewController {
             return "Please fill in all fields"
         }
         
-     
         return nil
     }
     
@@ -54,11 +52,9 @@ class LogInViewController: UIViewController {
     }
     
     
-
     @IBAction func loginTapped(_ sender: Any) {
         
         // validate text fields
-        
         let error = validateFields()
         
         if error != nil {
@@ -81,7 +77,5 @@ class LogInViewController: UIViewController {
                 }
             }
         }
-        
-      
     }
 }

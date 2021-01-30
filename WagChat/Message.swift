@@ -1,8 +1,7 @@
 //
 //  Message.swift
 //  WagChat
-//
-//
+
 
 import Foundation
 import UIKit

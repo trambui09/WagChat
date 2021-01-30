@@ -2,8 +2,7 @@
 //  SignUpViewController.swift
 //  WagChat
 //
-//  Created by Tram Bui on 1/26/21.
-//
+
 
 import UIKit
 import FirebaseAuth
@@ -49,21 +48,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(passwordTextField)
         
         Utilities.styleFilledButton(signUpButton)
-        
-        
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // check the fields if everything is correct, if fine, return nil, else return the error msg
     func validateFields() -> String? {
@@ -99,13 +84,13 @@ class SignUpViewController: UIViewController {
             // create cleaned versions of the data
             
             let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
             let location = locationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let dogInfo = dogInfoTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let topics = topicsTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+            // create the user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 // check if errors
                 if err != nil {
@@ -122,16 +107,11 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
-                    
+                    // transition to the home screen
                     self.transitionToHome()
-                    
                 }
             }
         }
-        // create the user
-        
-        // transition to the home screen
-        
     }
     
     func showError(_ message:String) {
@@ -147,6 +127,4 @@ class SignUpViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
     }
-    
-    
 }

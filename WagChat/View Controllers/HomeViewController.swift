@@ -2,8 +2,6 @@
 //  HomeViewController.swift
 //  WagChat
 //
-//  Created by Tram Bui on 1/26/21.
-//
 
 import UIKit
 import FirebaseAuth
@@ -18,20 +16,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatsButton: UIButton!
     
-    //initiate a variable to store users data
+    // initiate a variable to store users data
     var userData: [[String: String]] = []
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+   
         // tableview methods
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
       
         // Do any additional setup after loading the view.
         setUpElements()
@@ -84,43 +77,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController?.pushViewController(chatViewController!, animated: true)
         
-        
     }
-    
-
-    
     
     func setUpElements() {
-        
         Utilities.styleFilledButton(logOutButton)
-        
         Utilities.styleFilledButton(chatsButton)
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction func logOutTapped(_ sender: Any) {
-        
-//        let user = Auth.auth().currentUser
-//        if let user = user {
-//            let uid = user.uid
-//            let email = user.email
-//            print("The current user email is \(email)")
-//
-//        }
-//
-//        print("Logging out")
-        
+                
         // check if user is logged in or not
         // log out via Auth
         if Auth.auth().currentUser?.uid != nil {
@@ -141,14 +106,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
-    
+    // chatsButton is actually profileButton
     @IBAction func chatsButtonTapped(_ sender: Any) {
         let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
 
         self.view.window?.rootViewController = profileViewController
         self.view.window?.makeKeyAndVisible()
-
     }
-    
-    
 }

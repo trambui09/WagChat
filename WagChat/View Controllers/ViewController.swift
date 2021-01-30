@@ -1,8 +1,7 @@
 //
 //  ViewController.swift
 //  WagChat
-//
-//  Created by Tram Bui on 1/26/21.
+
 //
 
 import UIKit
@@ -17,14 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpElements();
-        
     }
     
     func setUpElements() {
         Utilities.styleFilledButton(signUpButton)
         Utilities.styleHollowButton(loginButton)
     }
-
-
 }
 
