@@ -45,9 +45,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("\(document.documentID) => \(document.data())")
 //                  print("\(document.data()["username"]!) - \(document.data()["topics"]!)")
                     let username = document.data()["username"] as! String
-                    let topic = document.data()["topics"] as! String
+                    let uid = document.data()["uid"] as! String
 
-                    let user = ["username": username, "topics": topic]
+                    let user = ["username": username, "uid": uid]
                     self.userData.append(user)
                     
                 }
@@ -73,10 +73,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let user = userData[indexPath.row]
         print(user["username"]!)
         
-        let chatsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatsViewController) as? ChatsViewController
+        let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
 
-        self.view.window?.rootViewController = chatsViewController
-        self.view.window?.makeKeyAndVisible()
+        chatViewController?.user2Name = user["username"]!
+        chatViewController?.user2UID = user["uid"]!
+//        self.view.window?.rootViewController = chatViewController
+//        self.view.window?.makeKeyAndVisible()
+//
+//        let chatViewController = ChatViewController()
+        
+        navigationController?.pushViewController(chatViewController!, animated: true)
+        
+        
     }
     
 

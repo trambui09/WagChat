@@ -317,6 +317,14 @@
                                     <segue destination="ylk-et-1Xd" kind="show" id="wdG-m4-pJg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMA-BY-2c5">
+                                <rect key="frame" x="121" y="104" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Chat"/>
+                                <connections>
+                                    <segue destination="qCn-Mr-9Dn" kind="show" id="l9G-MK-xSr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pY6-4q-H98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -372,6 +380,22 @@
             </objects>
             <point key="canvasLocation" x="4355" y="542"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="BwU-SH-i5G">
+            <objects>
+                <viewController storyboardIdentifier="ChatVC" id="qCn-Mr-9Dn" customClass="ChatViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tpD-7m-pJm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8ea-wl-Ddk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KiP-2i-axG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdj-SB-F6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080" y="326"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="tov-jx-Qqv">
             <objects>
@@ -415,7 +439,7 @@
         <!--Navigation Controller-->
         <scene sceneID="C5j-F1-0hC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cat-by-0T2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationVC" automaticallyAdjustsScrollViewInsets="NO" id="cat-by-0T2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Jf-UY-op1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>

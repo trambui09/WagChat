@@ -25,6 +25,9 @@
 		0D0F2C4125C114560005034B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C4025C114560005034B /* Utilities.swift */; };
 		0D0F2C6625C34C990005034B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C6525C34C990005034B /* ProfileViewController.swift */; };
 		0D0F2C7125C3A7840005034B /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C7025C3A7840005034B /* ChatsViewController.swift */; };
+		0D0F2C9425C4B2240005034B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C9325C4B2230005034B /* ChatViewController.swift */; };
+		0D0F2C9925C4B24E0005034B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C9825C4B24E0005034B /* Message.swift */; };
+		0D0F2C9E25C4B26A0005034B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C9D25C4B26A0005034B /* Chat.swift */; };
 		63559828494339F063E7B0B0 /* Pods_WagChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598E87DE4348357904E75103 /* Pods_WagChatTests.framework */; };
 		8A52816B55F51F68C4E36DA4 /* Pods_WagChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3F77094969178938715844 /* Pods_WagChat.framework */; };
 		CBB7ED599E611848C21FD258 /* Pods_WagChat_WagChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D3C44DF0A26141AA87E544 /* Pods_WagChat_WagChatUITests.framework */; };
@@ -71,6 +74,9 @@
 		0D0F2C4025C114560005034B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		0D0F2C6525C34C990005034B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D0F2C7025C3A7840005034B /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		0D0F2C9325C4B2230005034B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0D0F2C9825C4B24E0005034B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0D0F2C9D25C4B26A0005034B /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		598E87DE4348357904E75103 /* Pods_WagChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat.release.xcconfig"; path = "Target Support Files/Pods-WagChat/Pods-WagChat.release.xcconfig"; sourceTree = "<group>"; };
 		8156C62A4604983120AEC266 /* Pods-WagChat-WagChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat-WagChatUITests.release.xcconfig"; path = "Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 				0D0F2B3E25C0831A0005034B /* Assets.xcassets */,
 				0D0F2B4025C0831A0005034B /* LaunchScreen.storyboard */,
 				0D0F2B4325C0831A0005034B /* Info.plist */,
+				0D0F2C9825C4B24E0005034B /* Message.swift */,
+				0D0F2C9D25C4B26A0005034B /* Chat.swift */,
 			);
 			path = WagChat;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				0D0F2B3925C083160005034B /* ViewController.swift */,
 				0D0F2C6525C34C990005034B /* ProfileViewController.swift */,
 				0D0F2C7025C3A7840005034B /* ChatsViewController.swift */,
+				0D0F2C9325C4B2230005034B /* ChatViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -451,14 +460,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0F2C9E25C4B26A0005034B /* Chat.swift in Sources */,
 				0D0F2B3A25C083160005034B /* ViewController.swift in Sources */,
 				0D0F2B3625C083160005034B /* AppDelegate.swift in Sources */,
+				0D0F2C9425C4B2240005034B /* ChatViewController.swift in Sources */,
 				0D0F2C7125C3A7840005034B /* ChatsViewController.swift in Sources */,
 				0D0F2B6925C08FA30005034B /* SignUpViewController.swift in Sources */,
 				0D0F2B6E25C08FBE0005034B /* LogInViewController.swift in Sources */,
 				0D0F2B3825C083160005034B /* SceneDelegate.swift in Sources */,
 				0D0F2B7325C08FCE0005034B /* HomeViewController.swift in Sources */,
 				0D0F2C4125C114560005034B /* Utilities.swift in Sources */,
+				0D0F2C9925C4B24E0005034B /* Message.swift in Sources */,
 				0D0F2C6625C34C990005034B /* ProfileViewController.swift in Sources */,
 				0D0F2BF125C0DF380005034B /* Constants.swift in Sources */,
 			);

@@ -74,9 +74,9 @@ class LogInViewController: UIViewController {
                     self.errorLabel.alpha = 1
                 }
                 else {
-                    let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                    let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
                     
-                    self.view.window?.rootViewController = homeViewController
+                    self.view.window?.rootViewController = navigationViewController
                     self.view.window?.makeKeyAndVisible()
                 }
             }
