@@ -27,9 +27,9 @@ class ProfileViewController: UIViewController {
     }
     */
     @IBAction func wagChatButtonTapped(_ sender: Any) {
-        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-
-        self.view.window?.rootViewController = homeViewController
+        let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
+        
+        self.view.window?.rootViewController = navigationViewController
         self.view.window?.makeKeyAndVisible()
     }
     
