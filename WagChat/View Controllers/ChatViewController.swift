@@ -17,7 +17,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     var currentUser: User = Auth.auth().currentUser!
     
-    var user2Name: String = "Anonymous"
+    var user2Name: String?
     var user2UID: String?
     
     // no imgURL yet
@@ -30,7 +30,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         super.viewDidLoad()
         
         
-        self.title = user2Name ?? "Chat"
+        self.title = user2Name
 
                 navigationItem.largeTitleDisplayMode = .never
                 maintainPositionOnKeyboardFrameChanged = true
@@ -69,6 +69,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     func loadChat() {
            
            //Fetch all the chats which has current user in it
+        
+        // don't we want to load the chat with the current user and the selected user, user2uid
            let db = Firestore.firestore().collection("Chats")
                    .whereField("users", arrayContains: Auth.auth().currentUser?.uid ?? "Not Found User 1")
            
