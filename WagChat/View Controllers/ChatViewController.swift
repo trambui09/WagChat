@@ -97,7 +97,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                            
                            let chat = Chat(dictionary: doc.data())
                            //Get the chat which has user2 id
-                        if ((chat?.users.contains(self.user2UID!)) != nil) {
+                        if (chat?.users.contains(self.user2UID!))! {
                                
                                self.docReference = doc.reference
                                //fetch it's thread collection
