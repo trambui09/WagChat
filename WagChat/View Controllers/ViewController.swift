@@ -7,6 +7,8 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import Firebase
+import FirebaseFirestore
 
 class ViewController: UIViewController, GIDSignInDelegate  {
 
@@ -46,6 +48,15 @@ class ViewController: UIViewController, GIDSignInDelegate  {
         print("Login Successful.")
         //This is where you should add the functionality of successful login
         //i.e. dismissing this view or push the home view controller etc
+            let user: GIDGoogleUser = GIDSignIn.sharedInstance()!.currentUser
+            let db = Firestore.firestore()
+            
+            db.collection("users").addDocument(data: ["username":user.profile.name, "uid":authResult!.user.uid ]) { (error) in
+                if error != nil {
+                    // show error message
+                    print("Error saving user data")
+                }
+            }
             
             let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
             
