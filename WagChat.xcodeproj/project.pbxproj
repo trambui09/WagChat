@@ -228,6 +228,7 @@
 				0D0F2B2F25C083160005034B /* Frameworks */,
 				0D0F2B3025C083160005034B /* Resources */,
 				D52F1B2E7EA8F4E11ADAECB5 /* [CP] Embed Pods Frameworks */,
+				7E5D73189E684727918D22BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +267,7 @@
 				0D0F2B5025C0831B0005034B /* Frameworks */,
 				0D0F2B5125C0831B0005034B /* Resources */,
 				734F27A673026B0D3BB02E2F /* [CP] Embed Pods Frameworks */,
+				E27EE90779D7453D2257FA75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,6 +413,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7E5D73189E684727918D22BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D52F1B2E7EA8F4E11ADAECB5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +445,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WagChat/Pods-WagChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E27EE90779D7453D2257FA75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4B44FFF146E5A8299D0B30E /* [CP] Check Pods Manifest.lock */ = {

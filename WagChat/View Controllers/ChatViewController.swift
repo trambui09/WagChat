@@ -203,7 +203,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
        }
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-            return isFromCurrentSender(message: message) ? .blue: .lightGray
+            return isFromCurrentSender(message: message) ? .orange: .lightGray
         }
 
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {

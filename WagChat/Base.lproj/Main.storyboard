@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="t66-MD-MGg">
-                                <rect key="frame" x="40" y="576" width="334" height="120"/>
+                                <rect key="frame" x="40" y="526" width="334" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdK-8b-zQd">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -40,6 +40,13 @@
                                         <state key="normal" title="Log In"/>
                                         <connections>
                                             <segue destination="bkX-Ez-8Ea" kind="show" id="VKv-Od-p7a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-V4-dlR">
+                                        <rect key="frame" x="0.0" y="140" width="334" height="30"/>
+                                        <state key="normal" title="Log In with Google"/>
+                                        <connections>
+                                            <action selector="googleSignInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1t-8W-PiU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -79,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Yoh-Nz-PFc"/>
                     <connections>
+                        <outlet property="googleSignInButton" destination="c5n-V4-dlR" id="qmp-tH-bGm"/>
                         <outlet property="loginButton" destination="VEH-iT-qhN" id="N7z-fE-7ag"/>
                         <outlet property="signUpButton" destination="wdK-8b-zQd" id="Vog-98-2me"/>
                     </connections>
