@@ -9,6 +9,21 @@ import UIKit
 import FirebaseAuth
 
 class LogInViewController: UIViewController {
+    
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    // add logo to login view
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "pngkey.com-butt-png-2117336")
+        imageView.contentMode = .scaleToFill
+        return imageView
+    }()
 
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -20,10 +35,22 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Log In"
 
         // Do any additional setup after loading the view.
-        setUpElements()
+       // add subViews
+        view.addSubview(imageView)
         
+        setUpElements()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let size = view.width/3
+        imageView.frame = CGRect(x: (view.width-size)/2,
+                                 y: 70,
+                                 width: size,
+                                 height: size)
     }
     
     func setUpElements() {
