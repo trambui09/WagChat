@@ -42,7 +42,7 @@ class ViewController: UIViewController, GIDSignInDelegate  {
         guard let auth = user.authentication else { return }
         
         let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-        Auth.auth().signIn(with: credentials) { (authResult, error) in
+        Auth.auth().signIn(with: credentials) { (res, error) in
         if let error = error {
         print(error.localizedDescription)
         } else {
@@ -50,14 +50,25 @@ class ViewController: UIViewController, GIDSignInDelegate  {
         //This is where you should add the functionality of successful login
         //i.e. dismissing this view or push the home view controller etc
             let user: GIDGoogleUser = GIDSignIn.sharedInstance()!.currentUser
-            let db = Firestore.firestore()
+//            let db = Firestore.firestore()
+//
+//            db.collection("users").addDocument(data: ["username":user.profile.name, "uid":authResult!.user.uid ]) { (error) in
+//                if error != nil {
+//                    // show error message
+//                    print("Error saving user data")
+//                }
+//            }
             
-            db.collection("users").addDocument(data: ["username":user.profile.name, "uid":authResult!.user.uid ]) { (error) in
-                if error != nil {
-                    // show error message
-                    print("Error saving user data")
-                }
-            }
+            let db = Firestore.firestore()
+                        db.collection("users").document(String((res?.user.uid)!)).setData([
+                            "uid" : String((res?.user.uid)!),
+                            "username" : (res?.user.displayName)!
+                        ], merge: true) { (error) in
+                            if error != nil {
+                                // show error message
+                                print("Error saving user data")
+                            }
+                        }
             
             let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
             
