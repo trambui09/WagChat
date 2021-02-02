@@ -173,40 +173,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-5t-9nm">
-                                <rect key="frame" x="40" y="83.999999999999972" width="334" height="510.33333333333326"/>
+                                <rect key="frame" x="40" y="84" width="334" height="300.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bay-L6-GuL">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-3W-Gue">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CaC-vq-HrB">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog Info" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6rb-3l-NQA">
-                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topics of Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ph-Rc-HUh">
-                                        <rect key="frame" x="0.0" y="210" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CaC-vq-HrB">
-                                        <rect key="frame" x="0.0" y="280" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MA4-lh-F7o">
-                                        <rect key="frame" x="0.0" y="350" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3C-mW-dxZ">
-                                        <rect key="frame" x="0.0" y="420" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KOz-87-LxF"/>
                                         </constraints>
@@ -216,16 +201,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIP-XX-zhd">
-                                        <rect key="frame" x="0.0" y="490" width="334" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="280" width="334" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="BDX-3W-Gue" firstAttribute="height" secondItem="bay-L6-GuL" secondAttribute="height" id="2eM-gi-3kk"/>
-                                    <constraint firstItem="5Ph-Rc-HUh" firstAttribute="height" secondItem="bay-L6-GuL" secondAttribute="height" id="4ay-5w-hO5"/>
-                                    <constraint firstItem="6rb-3l-NQA" firstAttribute="height" secondItem="bay-L6-GuL" secondAttribute="height" id="F6d-XD-wdE"/>
                                     <constraint firstItem="z3C-mW-dxZ" firstAttribute="height" secondItem="bay-L6-GuL" secondAttribute="height" id="UYs-cv-txX"/>
                                     <constraint firstItem="CaC-vq-HrB" firstAttribute="height" secondItem="bay-L6-GuL" secondAttribute="height" id="l0P-kW-3g3"/>
                                     <constraint firstItem="MA4-lh-F7o" firstAttribute="height" secondItem="bay-L6-GuL" secondAttribute="height" id="xoy-60-q9m"/>
@@ -242,13 +224,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ldc-MA-ngb"/>
                     <connections>
-                        <outlet property="dogInfoTextField" destination="6rb-3l-NQA" id="bZE-0n-HkD"/>
                         <outlet property="emailTextField" destination="CaC-vq-HrB" id="bK3-s0-FF9"/>
                         <outlet property="errorLabel" destination="IIP-XX-zhd" id="hzI-04-2Js"/>
-                        <outlet property="locationTextField" destination="BDX-3W-Gue" id="akM-cI-Jjt"/>
                         <outlet property="passwordTextField" destination="MA4-lh-F7o" id="YSv-09-8IV"/>
                         <outlet property="signUpButton" destination="z3C-mW-dxZ" id="h1c-ja-tO3"/>
-                        <outlet property="topicsTextField" destination="5Ph-Rc-HUh" id="qbs-Uq-GEy"/>
                         <outlet property="usernameTextField" destination="bay-L6-GuL" id="Qeo-Pr-v9X"/>
                     </connections>
                 </viewController>
