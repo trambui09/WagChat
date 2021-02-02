@@ -361,12 +361,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUb-aW-ttS">
-                                <rect key="frame" x="182.66666666666666" y="357.66666666666669" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-zg-bhc">
                                 <rect key="frame" x="179.66666666666666" y="10" width="55" height="55"/>
                                 <constraints>
@@ -378,14 +372,39 @@
                                     <action selector="wagChatButtonTapped:" destination="WEK-c0-mwI" eventType="touchUpInside" id="a4w-kS-wNj"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LUq-fb-3hJ">
+                                <rect key="frame" x="40" y="115" width="334" height="162"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog Information" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99f-hP-zyH">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0x-dc-grc">
+                                        <rect key="frame" x="0.0" y="44" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="About" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ess-xI-X9k">
+                                        <rect key="frame" x="0.0" y="88" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xee-d0-1Tj">
+                                        <rect key="frame" x="0.0" y="132" width="334" height="30"/>
+                                        <state key="normal" title="Update Profile"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98E-ep-KZB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="leading" secondItem="98E-ep-KZB" secondAttribute="leading" constant="40" id="DS9-fg-r67"/>
+                            <constraint firstItem="98E-ep-KZB" firstAttribute="trailing" secondItem="LUq-fb-3hJ" secondAttribute="trailing" constant="40" id="Lxp-vP-0Rp"/>
+                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="QHQ-Me-ziY"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="ShQ-Bl-PGT"/>
-                            <constraint firstItem="uUb-aW-ttS" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="Ua7-lb-XRE"/>
-                            <constraint firstItem="uUb-aW-ttS" firstAttribute="centerY" secondItem="E63-eT-ebj" secondAttribute="centerY" id="W0q-DP-iir"/>
-                            <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="uUb-aW-ttS" secondAttribute="centerX" id="cpJ-28-uGF"/>
+                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="50" id="gde-Yx-UbK"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="10" id="hwH-b2-XRw"/>
                         </constraints>
                     </view>
