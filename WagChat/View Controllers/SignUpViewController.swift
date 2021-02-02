@@ -172,7 +172,7 @@ class SignUpViewController: UIViewController {
 }
 
 // get the result of user selecting a photo from the camera
-extension SignUpViewController: UIImagePickerControllerDelegate {
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
    // action sheet(take photo or choose photo)
     func presentPhotoActionSheet() {
@@ -186,16 +186,36 @@ extension SignUpViewController: UIImagePickerControllerDelegate {
         
         actionSheet.addAction(UIAlertAction(title: "Take Photo",
                                             style: .default,
-                                            handler: { _ in
+                                            handler: { [weak self] _ in
+                                                
+                                                self?.presentCamera()
                                                 
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Choose Photo",
                                             style: .default,
-                                            handler: { _ in
+                                            handler: { [weak self] _ in
+                                                
+                                                self?.presentPhotoPicker()
                                                 
         }))
         present(actionSheet, animated: true)
+    }
+    
+    func presentCamera() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
     }
     
    // when user take a photo/select
