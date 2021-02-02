@@ -21,7 +21,8 @@ class SignUpViewController: UIViewController {
     // add profile image
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "pngkey.com-butt-png-2117336")
+        imageView.image = UIImage(systemName: "person")
+        imageView.tintColor = .gray
         imageView.contentMode = .scaleToFill
         return imageView
     }()
@@ -47,10 +48,24 @@ class SignUpViewController: UIViewController {
         title = "Sign Up"
         
         view.addSubview(imageView)
+        
+        imageView.isUserInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true
 
         // Do any additional setup after loading the view.
         setUpElements()
+        
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(didTapChangeProfilePic))
+        
+        imageView.addGestureRecognizer(gesture)
     }
+    
+    // will be called when user tap on head
+       @objc private func didTapChangeProfilePic() {
+           print("Change pic called")
+       }
+       
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
