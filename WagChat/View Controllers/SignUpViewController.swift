@@ -11,6 +11,20 @@ import FirebaseFirestore
 
 
 class SignUpViewController: UIViewController {
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    // add profile image
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "pngkey.com-butt-png-2117336")
+        imageView.contentMode = .scaleToFill
+        return imageView
+    }()
 
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -31,9 +45,20 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
+        
+        view.addSubview(imageView)
 
         // Do any additional setup after loading the view.
         setUpElements()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let size = view.width/3
+        imageView.frame = CGRect(x: (view.width-size)/2,
+                                 y: 70,
+                                 width: size,
+                                 height: size)
     }
     
     func setUpElements() {
@@ -60,7 +85,6 @@ class SignUpViewController: UIViewController {
             return "Please fill in all fields"
         }
         
-        // check is password is secure
         
         let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
