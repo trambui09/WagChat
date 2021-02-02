@@ -278,7 +278,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tWD-L2-vAl">
-                                <rect key="frame" x="0.0" y="104" width="414" height="632"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" id="BbU-gi-cUB">
@@ -301,8 +301,8 @@
                                     <action selector="chatsButtonTapped:" destination="PfL-F3-czr" eventType="touchUpInside" id="Sco-3X-9Kx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngkey.com-butt-png-2117336" translatesAutoresizingMaskIntoConstraints="NO" id="ITF-oV-eCe">
-                                <rect key="frame" x="179.66666666666666" y="70" width="55" height="55"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pngkey.com-butt-png-2117336" translatesAutoresizingMaskIntoConstraints="NO" id="ITF-oV-eCe">
+                                <rect key="frame" x="180" y="44" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="Vf9-CN-Laa"/>
                                     <constraint firstAttribute="height" constant="55" id="Vmv-h5-qK4"/>
@@ -317,7 +317,7 @@
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerX" secondItem="wsH-Py-uUD" secondAttribute="centerX" id="CJb-wz-NtD"/>
                             <constraint firstItem="tWD-L2-vAl" firstAttribute="leading" secondItem="pY6-4q-H98" secondAttribute="leading" id="V3P-tu-Ccp"/>
                             <constraint firstItem="Op3-Qd-H7y" firstAttribute="leading" secondItem="pY6-4q-H98" secondAttribute="leading" constant="20" id="ZcV-dh-ODa"/>
-                            <constraint firstItem="tWD-L2-vAl" firstAttribute="top" secondItem="Op3-Qd-H7y" secondAttribute="bottom" constant="10" id="Zdf-cR-J11"/>
+                            <constraint firstItem="tWD-L2-vAl" firstAttribute="top" secondItem="Op3-Qd-H7y" secondAttribute="bottom" constant="20" id="Zdf-cR-J11"/>
                             <constraint firstItem="pY6-4q-H98" firstAttribute="trailing" secondItem="tWD-L2-vAl" secondAttribute="trailing" id="c20-7F-htn"/>
                             <constraint firstItem="ITF-oV-eCe" firstAttribute="top" secondItem="wsH-Py-uUD" secondAttribute="top" constant="70" id="dFy-7c-Dkn"/>
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerY" secondItem="wsH-Py-uUD" secondAttribute="centerY" id="dfU-gR-dxU"/>
@@ -367,21 +367,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-zg-bhc">
-                                <rect key="frame" x="175.66666666666666" y="120" width="63" height="30"/>
-                                <state key="normal" title="WagChat"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-zg-bhc">
+                                <rect key="frame" x="179.66666666666666" y="10" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="0hE-yo-rI5"/>
+                                    <constraint firstAttribute="width" constant="55" id="5Ut-5V-1cY"/>
+                                </constraints>
+                                <state key="normal" title="WagChat" image="pngkey.com-butt-png-2117336"/>
                                 <connections>
                                     <action selector="wagChatButtonTapped:" destination="WEK-c0-mwI" eventType="touchUpInside" id="a4w-kS-wNj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98E-ep-KZB"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="ShQ-Bl-PGT"/>
                             <constraint firstItem="uUb-aW-ttS" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="Ua7-lb-XRE"/>
                             <constraint firstItem="uUb-aW-ttS" firstAttribute="centerY" secondItem="E63-eT-ebj" secondAttribute="centerY" id="W0q-DP-iir"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="uUb-aW-ttS" secondAttribute="centerX" id="cpJ-28-uGF"/>
-                            <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="120" id="hwH-b2-XRw"/>
+                            <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="10" id="hwH-b2-XRw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DfD-Y6-eUl"/>

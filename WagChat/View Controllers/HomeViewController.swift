@@ -112,7 +112,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func chatsButtonTapped(_ sender: Any) {
         let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
 
-        self.view.window?.rootViewController = profileViewController
-        self.view.window?.makeKeyAndVisible()
+//        self.view.window?.rootViewController = profileViewController
+//        self.view.window?.makeKeyAndVisible()
+        
+    
+        navigationController?.pushViewController(profileViewController!, animated: true)
     }
 }
