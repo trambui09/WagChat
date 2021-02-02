@@ -21,6 +21,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     var user2UID: String?
     
     // no imgURL yet
+    var user2ImgUrl: String?
     
     private var docReference: DocumentReference?
        
@@ -214,5 +215,25 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
        }
     
     // skipped the avatarSize and configure avatar methods
+    
+    func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+           return .zero
+       }
+       
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+           
+           if message.sender.senderId == currentUser.uid {
+               SDWebImageManager.shared.loadImage(with: currentUser.photoURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                   avatarView.image = image
+               }
+           }
+//           else {
+//               SDWebImageManager.shared.loadImage(with: URL(string: user2ImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+//                   avatarView.image = image
+//               }
+//           }
+       }
+    
+    
     
 }
