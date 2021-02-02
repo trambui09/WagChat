@@ -62,9 +62,11 @@ class SignUpViewController: UIViewController {
     }
     
     // will be called when user tap on head
-       @objc private func didTapChangeProfilePic() {
-           print("Change pic called")
-       }
+    @objc private func didTapChangeProfilePic() {
+        presentPhotoActionSheet()
+       // print("Change pic called")
+        
+    }
        
     
     override func viewDidLayoutSubviews() {
@@ -166,5 +168,48 @@ class SignUpViewController: UIViewController {
         
         self.view.window?.rootViewController = navigationViewController
         self.view.window?.makeKeyAndVisible()
+    }
+}
+
+// get the result of user selecting a photo from the camera
+extension SignUpViewController: UIImagePickerControllerDelegate {
+    
+   // action sheet(take photo or choose photo)
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select a picture?",
+                                            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel,
+                                            handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: "Take Photo",
+                                            style: .default,
+                                            handler: { _ in
+                                                
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo",
+                                            style: .default,
+                                            handler: { _ in
+                                                
+        }))
+        present(actionSheet, animated: true)
+    }
+    
+   // when user take a photo/select
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true, completion: nil)
+            guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+
+        self.imageView.image = selectedImage
+    }
+   
+    // when user cancel taking picture/photo selection
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
     }
 }
