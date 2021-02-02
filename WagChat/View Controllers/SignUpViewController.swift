@@ -221,10 +221,11 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
    // when user take a photo/select
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             picker.dismiss(animated: true, completion: nil)
+            print(info)
             guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
-        }
-
+                   return
+               }
+        
         self.imageView.image = selectedImage
     }
    
