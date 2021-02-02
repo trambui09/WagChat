@@ -109,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IFw-dS-Sqv">
-                                <rect key="frame" x="40" y="84.000000000000014" width="334" height="230.33333333333337"/>
+                                <rect key="frame" x="40" y="194" width="334" height="230.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRd-ov-BiE">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -149,7 +149,7 @@
                         <constraints>
                             <constraint firstItem="IFw-dS-Sqv" firstAttribute="leading" secondItem="T5g-7b-lHn" secondAttribute="leading" constant="40" id="437-Ye-rCf"/>
                             <constraint firstItem="T5g-7b-lHn" firstAttribute="trailing" secondItem="IFw-dS-Sqv" secondAttribute="trailing" constant="40" id="BY3-a5-bb5"/>
-                            <constraint firstItem="IFw-dS-Sqv" firstAttribute="top" secondItem="T5g-7b-lHn" secondAttribute="top" constant="40" id="wgd-JT-2UO"/>
+                            <constraint firstItem="IFw-dS-Sqv" firstAttribute="top" secondItem="T5g-7b-lHn" secondAttribute="top" constant="150" id="wgd-JT-2UO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Av7-kN-5w4"/>
