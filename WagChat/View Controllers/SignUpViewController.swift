@@ -24,6 +24,9 @@ class SignUpViewController: UIViewController {
         imageView.image = UIImage(systemName: "person")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleToFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
         return imageView
     }()
 
@@ -76,6 +79,8 @@ class SignUpViewController: UIViewController {
                                  y: 70,
                                  width: size,
                                  height: size)
+        
+        imageView.layer.cornerRadius = imageView.width/2
     }
     
     func setUpElements() {
