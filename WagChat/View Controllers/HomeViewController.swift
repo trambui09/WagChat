@@ -39,8 +39,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                  print("\(document.data()["username"]!) - \(document.data()["topics"]!)")
                     let username = document.data()["username"] as! String
                     let uid = document.data()["uid"] as! String
+                    let photoUrl = document.data()["photoUrl"] as! String
 
-                    let user = ["username": username, "uid": uid]
+                    let user = ["username": username, "uid": uid, "photoUrl": photoUrl]
                     self.userData.append(user)
                     
                 }
@@ -70,6 +71,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         chatViewController?.user2Name = user["username"]!
         chatViewController?.user2UID = user["uid"]!
+        chatViewController?.user2ImgUrl = user["photoUrl"]!
 //        self.view.window?.rootViewController = chatViewController
 //        self.view.window?.makeKeyAndVisible()
 //

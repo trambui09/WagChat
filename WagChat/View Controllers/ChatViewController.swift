@@ -35,8 +35,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
                 navigationItem.largeTitleDisplayMode = .never
                 maintainPositionOnKeyboardFrameChanged = true
-//                messageInputBar.inputTextView.tintColor = .primary
-//                messageInputBar.sendButton.setTitleColor(.primary, for: .normal)
+                messageInputBar.inputTextView.tintColor = .blue
+                messageInputBar.sendButton.setTitleColor(.blue, for: .normal)
                 
                 messageInputBar.delegate = self
                 messagesCollectionView.messagesDataSource = self
@@ -226,12 +226,11 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                SDWebImageManager.shared.loadImage(with: currentUser.photoURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                    avatarView.image = image
                }
+           } else {
+               SDWebImageManager.shared.loadImage(with: URL(string: user2ImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                   avatarView.image = image
+               }
            }
-//           else {
-//               SDWebImageManager.shared.loadImage(with: URL(string: user2ImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-//                   avatarView.image = image
-//               }
-//           }
        }
     
     

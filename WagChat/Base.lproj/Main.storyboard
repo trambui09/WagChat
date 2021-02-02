@@ -3,7 +3,6 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,8 +44,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-V4-dlR">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Log In with Google" image="google.png" backgroundImage="Google">
-                                            <color key="titleColor" name="AccentColor"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="googleSignInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1t-8W-PiU"/>
@@ -301,6 +301,13 @@
                                     <action selector="chatsButtonTapped:" destination="PfL-F3-czr" eventType="touchUpInside" id="Sco-3X-9Kx"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngkey.com-butt-png-2117336" translatesAutoresizingMaskIntoConstraints="NO" id="ITF-oV-eCe">
+                                <rect key="frame" x="179.66666666666666" y="70" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="Vf9-CN-Laa"/>
+                                    <constraint firstAttribute="height" constant="55" id="Vmv-h5-qK4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pY6-4q-H98"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -312,8 +319,10 @@
                             <constraint firstItem="Op3-Qd-H7y" firstAttribute="leading" secondItem="pY6-4q-H98" secondAttribute="leading" constant="20" id="ZcV-dh-ODa"/>
                             <constraint firstItem="tWD-L2-vAl" firstAttribute="top" secondItem="Op3-Qd-H7y" secondAttribute="bottom" constant="10" id="Zdf-cR-J11"/>
                             <constraint firstItem="pY6-4q-H98" firstAttribute="trailing" secondItem="tWD-L2-vAl" secondAttribute="trailing" id="c20-7F-htn"/>
+                            <constraint firstItem="ITF-oV-eCe" firstAttribute="top" secondItem="wsH-Py-uUD" secondAttribute="top" constant="70" id="dFy-7c-Dkn"/>
                             <constraint firstItem="d0j-yz-6y1" firstAttribute="centerY" secondItem="wsH-Py-uUD" secondAttribute="centerY" id="dfU-gR-dxU"/>
                             <constraint firstItem="Op3-Qd-H7y" firstAttribute="top" secondItem="pY6-4q-H98" secondAttribute="top" constant="20" id="f0u-Ng-gAF"/>
+                            <constraint firstItem="ITF-oV-eCe" firstAttribute="centerX" secondItem="wsH-Py-uUD" secondAttribute="centerX" id="icM-Z9-trv"/>
                             <constraint firstItem="pY6-4q-H98" firstAttribute="trailing" secondItem="CTW-O9-sh5" secondAttribute="trailing" constant="20" id="pSI-d6-UMC"/>
                         </constraints>
                     </view>
@@ -408,9 +417,6 @@
         <image name="google.png" width="18" height="18"/>
         <image name="pngkey.com-butt-png-2117336" width="434" height="423"/>
         <image name="wagchatbackground" width="1280" height="1024"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
