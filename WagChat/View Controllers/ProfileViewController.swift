@@ -19,6 +19,9 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var updateProfileButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var successLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
@@ -29,6 +32,7 @@ class ProfileViewController: UIViewController {
     
     func setUpElements() {
         errorLabel.alpha = 0
+        successLabel.alpha = 0
         Utilities.styleFilledButton(updateProfileButton)
         
     }
@@ -48,6 +52,11 @@ class ProfileViewController: UIViewController {
     func showError(_ message:String) {
         errorLabel.text = message
         errorLabel.alpha = 1
+    }
+    
+    func showSuccess(_ message:String) {
+        successLabel.text = message
+        successLabel.alpha = 1
     }
     
     @IBAction func wagChatButtonTapped(_ sender: Any) {
@@ -81,9 +90,7 @@ class ProfileViewController: UIViewController {
                                 print("Error saving user data")
                             }
                         }
-
-                        
-        
+            showSuccess("Profile Edited!")
     }
     }
     

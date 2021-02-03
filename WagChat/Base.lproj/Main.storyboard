@@ -375,7 +375,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LUq-fb-3hJ">
-                                <rect key="frame" x="40" y="115" width="334" height="290"/>
+                                <rect key="frame" x="40" y="114.99999999999997" width="334" height="320.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog Information" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99f-hP-zyH">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -408,6 +408,12 @@
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="successLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q92-rc-Q6a">
+                                        <rect key="frame" x="0.0" y="300" width="334" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Xee-d0-1Tj" firstAttribute="height" secondItem="99f-hP-zyH" secondAttribute="height" id="Ivp-9o-zmo"/>
@@ -434,6 +440,7 @@
                         <outlet property="dogInfo" destination="99f-hP-zyH" id="Z1h-Nw-TYt"/>
                         <outlet property="errorLabel" destination="Ck8-yq-rAc" id="DcE-7X-Fcn"/>
                         <outlet property="location" destination="e0x-dc-grc" id="Hab-zY-qVX"/>
+                        <outlet property="successLabel" destination="q92-rc-Q6a" id="Idj-EB-Qqf"/>
                         <outlet property="updateProfileButton" destination="Xee-d0-1Tj" id="cS6-FY-6qK"/>
                         <outlet property="wagChatButton" destination="cEy-zg-bhc" id="XFd-kI-QSD"/>
                     </connections>
@@ -468,6 +475,9 @@
         <image name="wagchatbackground" width="1280" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
