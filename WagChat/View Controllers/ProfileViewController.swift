@@ -60,6 +60,21 @@ class ProfileViewController: UIViewController {
             showError(error!)
         }
         else {
+            // unless you specify that the data should be merged into the existing document
+            // document will be overwritten
+            // db.collection("cities").document("BJ").setData([ "capital": true ], merge: true)
+            
+//            let db = Firestore.firestore()
+//                        db.collection("users").document(String((res?.user.uid)!)).setData([
+//                            "uid" : String((res?.user.uid)!),
+//                            "username" : (res?.user.displayName)!
+//                        ], merge: true) { (error) in
+//                            if error != nil {
+//                                // show error message
+//                                print("Error saving user data")
+//                            }
+//                        }
+
         }
     }
     

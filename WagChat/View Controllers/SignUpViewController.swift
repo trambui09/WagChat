@@ -148,12 +148,18 @@ class SignUpViewController: UIViewController {
                     // user was created good! now store
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["username":username, "uid":result!.user.uid, "photoUrl": "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"]) { (error) in
+                    db.collection("users").document(String(((result?.user.uid)!))).setData(["username":username, "uid":result!.user.uid,
+                    "photoUrl": "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"], merge: true){ (error) in
                         if error != nil {
                             // show error message
                             self.showError("Error saving user data")
                         }
                     }
+                    
+                    // db.collection("users").document(String((res?.user.uid)!)).setData([
+                    //                            "uid" : String((res?.user.uid)!),
+                    //                            "username" : (res?.user.displayName)!
+                    //                        ], merge: true)
                     // transition to the home screen
                     self.transitionToHome()
                 }
