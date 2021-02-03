@@ -46,11 +46,11 @@ class LogInViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let size = view.width/3
+        let size = view.width/4
         imageView.frame = CGRect(x: (view.width-size)/2,
-                                 y: 70,
-                                 width: size,
-                                 height: size)
+                                 y: 90,
+                                 width: 80,
+                                 height: 80)
     }
     
     func setUpElements() {

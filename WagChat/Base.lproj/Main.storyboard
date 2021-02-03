@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-5t-9nm">
-                                <rect key="frame" x="40" y="84" width="334" height="300.33333333333331"/>
+                                <rect key="frame" x="40" y="193.99999999999997" width="334" height="300.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bay-L6-GuL">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -219,7 +219,7 @@
                         <constraints>
                             <constraint firstItem="LpD-5t-9nm" firstAttribute="leading" secondItem="S6s-at-FUK" secondAttribute="leading" constant="40" id="BRn-g4-uER"/>
                             <constraint firstItem="S6s-at-FUK" firstAttribute="trailing" secondItem="LpD-5t-9nm" secondAttribute="trailing" constant="40" id="awW-I0-RB5"/>
-                            <constraint firstItem="LpD-5t-9nm" firstAttribute="top" secondItem="S6s-at-FUK" secondAttribute="top" constant="40" id="cgu-jk-HW1"/>
+                            <constraint firstItem="LpD-5t-9nm" firstAttribute="top" secondItem="S6s-at-FUK" secondAttribute="top" constant="150" id="cgu-jk-HW1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ldc-MA-ngb"/>
