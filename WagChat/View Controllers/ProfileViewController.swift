@@ -28,6 +28,35 @@ class ProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setUpElements()
+        populateTextFields()
+    }
+    
+    // populate text fields from firebase
+    
+    func populateTextFields() {
+        dogInfo.text = "pug"
+        
+        let currentUserUID = (Auth.auth().currentUser?.uid)!
+        
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(currentUserUID)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(dataDescription)")
+                self.dogInfo.text = document.data()?["dogInfo"]! as? String
+                self.location.text = document.data()?["location"]! as? String
+                self.about.text = document.data()?["about"]! as? String
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
+        // get the current user UID
+        // get the fields saved in DB, load the data
+        // set it to the fields.text
+    
     }
     
     func setUpElements() {
