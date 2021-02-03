@@ -59,7 +59,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
         let user = userData[indexPath.row]
-        cell?.textLabel?.text = user["username"]
+        
+        // how to check if username is the current username so we can put a marker
+        // to say it's you
+        if Auth.auth().currentUser?.uid == user["uid"]  {
+            cell?.textLabel?.text = "\(user["username"] ?? "YOU") - YOU"
+        } else {
+            cell?.textLabel?.text = user["username"]
+        }
         return cell!
     }
     
