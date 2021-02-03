@@ -107,10 +107,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             // bring up the welcome screen
+//
+//            let welcomeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.welcomeViewController) as? ViewController
+//
+//            self.view.window?.rootViewController = welcomeViewController
+//            self.view.window?.makeKeyAndVisible()
+//
             
-            let welcomeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.welcomeViewController) as? ViewController
+            let firstNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstNavigationController) as? UINavigationController
             
-            self.view.window?.rootViewController = welcomeViewController
+            self.view.window?.rootViewController = firstNavigationViewController
             self.view.window?.makeKeyAndVisible()
             
         }
