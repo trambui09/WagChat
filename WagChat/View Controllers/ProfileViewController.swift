@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var wagChatButton: UIButton!
+    @IBOutlet weak var updateProfileButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -410,6 +410,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DfD-Y6-eUl"/>
                     <connections>
+                        <outlet property="updateProfileButton" destination="Xee-d0-1Tj" id="cS6-FY-6qK"/>
                         <outlet property="wagChatButton" destination="cEy-zg-bhc" id="XFd-kI-QSD"/>
                     </connections>
                 </viewController>
