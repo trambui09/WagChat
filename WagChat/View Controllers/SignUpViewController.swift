@@ -11,6 +11,24 @@ import FirebaseFirestore
 
 
 class SignUpViewController: UIViewController {
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    // add profile image
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person")
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleToFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        return imageView
+    }()
 
     @IBOutlet weak var usernameTextField: UITextField!
     
@@ -31,9 +49,38 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
+        
+        view.addSubview(imageView)
+        
+        imageView.isUserInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true
 
         // Do any additional setup after loading the view.
         setUpElements()
+        
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(didTapChangeProfilePic))
+        
+        imageView.addGestureRecognizer(gesture)
+    }
+    
+    // will be called when user tap on head
+    @objc private func didTapChangeProfilePic() {
+        presentPhotoActionSheet()
+       // print("Change pic called")
+        
+    }
+       
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let size = view.width/3
+        imageView.frame = CGRect(x: (view.width-size)/2,
+                                 y: 70,
+                                 width: size,
+                                 height: size)
+        
+        imageView.layer.cornerRadius = imageView.width/2
     }
     
     func setUpElements() {
@@ -60,7 +107,6 @@ class SignUpViewController: UIViewController {
             return "Please fill in all fields"
         }
         
-        // check is password is secure
         
         let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -127,5 +173,69 @@ class SignUpViewController: UIViewController {
         
         self.view.window?.rootViewController = navigationViewController
         self.view.window?.makeKeyAndVisible()
+    }
+}
+
+// get the result of user selecting a photo from the camera
+extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+   // action sheet(take photo or choose photo)
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select a picture?",
+                                            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel,
+                                            handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: "Take Photo",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+                                                
+                                                self?.presentCamera()
+                                                
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+                                                
+                                                self?.presentPhotoPicker()
+                                                
+        }))
+        present(actionSheet, animated: true)
+    }
+    
+    func presentCamera() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+   // when user take a photo/select
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true, completion: nil)
+            print(info)
+            guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+                   return
+               }
+        
+        self.imageView.image = selectedImage
+    }
+   
+    // when user cancel taking picture/photo selection
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
     }
 }
