@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
     // populate text fields from firebase
     
     func populateTextFields() {
-        dogInfo.text = "pug"
+//        dogInfo.text = "pug"
         
         let currentUserUID = (Auth.auth().currentUser?.uid)!
         
@@ -45,10 +45,13 @@ class ProfileViewController: UIViewController {
             if let document = document, document.exists {
 //                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
 //                print("Document data: \(dataDescription)")
-                self.dogInfo.text = document.data()?["dogInfo"]! as? String
-                self.location.text = document.data()?["location"]! as? String
-                self.about.text = document.data()?["about"]! as? String
-                
+                // need a check if the fields are nil or not
+                if document.data()?["dogInfo"] != nil && document.data()?["location"] != nil && document.data()?["about"] != nil  {
+                    self.dogInfo.text = document.data()?["dogInfo"]! as? String
+                    self.location.text = document.data()?["location"]! as? String
+                    self.about.text = document.data()?["about"]! as? String
+                }
+               
             } else {
                 print("Document does not exist")
             }
