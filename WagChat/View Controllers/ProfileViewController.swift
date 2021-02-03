@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var wagChatButton: UIButton!
@@ -63,19 +66,25 @@ class ProfileViewController: UIViewController {
             // unless you specify that the data should be merged into the existing document
             // document will be overwritten
             // db.collection("cities").document("BJ").setData([ "capital": true ], merge: true)
+            let dogInformation = dogInfo.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let locationCity = location.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let aboutSection = about.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-//            let db = Firestore.firestore()
-//                        db.collection("users").document(String((res?.user.uid)!)).setData([
-//                            "uid" : String((res?.user.uid)!),
-//                            "username" : (res?.user.displayName)!
-//                        ], merge: true) { (error) in
-//                            if error != nil {
-//                                // show error message
-//                                print("Error saving user data")
-//                            }
-//                        }
+            let db = Firestore.firestore()
+            db.collection("users").document(String((Auth.auth().currentUser?.uid)!)).setData([
+                            "location" : locationCity,
+                            "dogInfo" : dogInformation,
+                            "about" : aboutSection
+                        ], merge: true) { (error) in
+                            if error != nil {
+                                // show error message
+                                print("Error saving user data")
+                            }
+                        }
 
-        }
+                        
+        
+    }
     }
     
 }

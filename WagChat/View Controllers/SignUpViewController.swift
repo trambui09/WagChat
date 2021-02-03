@@ -155,11 +155,6 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
-                    
-                    // db.collection("users").document(String((res?.user.uid)!)).setData([
-                    //                            "uid" : String((res?.user.uid)!),
-                    //                            "username" : (res?.user.displayName)!
-                    //                        ], merge: true)
                     // transition to the home screen
                     self.transitionToHome()
                 }
