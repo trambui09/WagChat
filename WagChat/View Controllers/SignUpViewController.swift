@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController {
     // add profile image
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.circle")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleToFill
         imageView.layer.masksToBounds = true
