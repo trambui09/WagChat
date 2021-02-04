@@ -123,6 +123,13 @@ class ProfileViewController: UIViewController {
                             }
                         }
             showSuccess("Profile Edited!")
+            
+            // go back to navigation View controller
+            
+            let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
+            
+            self.view.window?.rootViewController = navigationViewController
+            self.view.window?.makeKeyAndVisible()
     }
     }
     

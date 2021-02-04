@@ -170,9 +170,15 @@ class SignUpViewController: UIViewController {
     func transitionToHome() {
         
         // reference to HomeVC
-        let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
+//        let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
+//
+//        self.view.window?.rootViewController = navigationViewController
+//        self.view.window?.makeKeyAndVisible()
         
-        self.view.window?.rootViewController = navigationViewController
+        // go to profile to fill out
+        let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
+
+        self.view.window?.rootViewController = profileViewController
         self.view.window?.makeKeyAndVisible()
     }
 }
