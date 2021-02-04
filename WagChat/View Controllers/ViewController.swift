@@ -49,32 +49,50 @@ class ViewController: UIViewController, GIDSignInDelegate  {
         print("Login Successful.")
         //This is where you should add the functionality of successful login
         //i.e. dismissing this view or push the home view controller etc
-            let user: GIDGoogleUser = GIDSignIn.sharedInstance()!.currentUser
-//            let db = Firestore.firestore()
-//
-//            db.collection("users").addDocument(data: ["username":user.profile.name, "uid":authResult!.user.uid ]) { (error) in
-//                if error != nil {
-//                    // show error message
-//                    print("Error saving user data")
-//                }
-//            }
             
-            let db = Firestore.firestore()
-                        db.collection("users").document(String((res?.user.uid)!)).setData([
-                            "uid" : String((res?.user.uid)!),
-                            "username" : (res?.user.displayName)!
-                        ], merge: true) { (error) in
-                            if error != nil {
-                                // show error message
-                                print("Error saving user data")
+            
+            // if they are in the system, go to homepage
+            // if not, lead them to the profile view controller
+            let newUser = res?.additionalUserInfo?.isNewUser
+            
+            if (newUser!) {
+                    // sign up
+//                let user: GIDGoogleUser = GIDSignIn.sharedInstance()!.currentUser
+    //            let db = Firestore.firestore()
+    //
+    //            db.collection("users").addDocument(data: ["username":user.profile.name, "uid":authResult!.user.uid ]) { (error) in
+    //                if error != nil {
+    //                    // show error message
+    //                    print("Error saving user data")
+    //                }
+    //            }
+                
+                let db = Firestore.firestore()
+                            db.collection("users").document(String((res?.user.uid)!)).setData([
+                                "uid" : String((res?.user.uid)!),
+                                "username" : (res?.user.displayName)!,
+                                "photoUrl": "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"
+                            ], merge: true) { (error) in
+                                if error != nil {
+                                    // show error message
+                                    print("Error saving user data")
+                                }
                             }
-                        }
-            
-            let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
-            
-            self.view.window?.rootViewController = navigationViewController
-            self.view.window?.makeKeyAndVisible()
-        }
+                
+                let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
+    
+                self.view.window?.rootViewController = profileViewController
+                self.view.window?.makeKeyAndVisible()
+                
+                
+                } else {
+                    // login
+                    let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
+                    
+                    self.view.window?.rootViewController = navigationViewController
+                    self.view.window?.makeKeyAndVisible()
+                }
+            }
         }
     }
     
