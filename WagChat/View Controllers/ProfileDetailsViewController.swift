@@ -8,8 +8,22 @@ import UIKit
 
 class ProfileDetailsViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var dogLabel: UILabel!
+    
+    @IBOutlet weak var aboutLabel: UILabel!
+    
+    @IBOutlet weak var messageButton: UIButton!
+    
+    var selectedUserUID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Selected User Profile"
 
         // Do any additional setup after loading the view.
     }

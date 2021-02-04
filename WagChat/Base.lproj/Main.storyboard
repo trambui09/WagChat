@@ -347,8 +347,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0pq-Lw-z4J">
-                                <rect key="frame" x="40" y="327.66666666666669" width="334" height="81"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0pq-Lw-z4J">
+                                <rect key="frame" x="40" y="300" width="334" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRn-Eu-6O9">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="20.333333333333332"/>
@@ -357,21 +357,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fay-zS-COH">
-                                        <rect key="frame" x="0.0" y="30.333333333333314" width="334" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="35.333333333333314" width="334" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djl-y1-adu">
-                                        <rect key="frame" x="0.0" y="60.666666666666636" width="334" height="20.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="70.666666666666686" width="334" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNq-Gg-UCu">
+                                        <rect key="frame" x="0.0" y="106" width="334" height="30"/>
+                                        <state key="normal" title="Message"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hU-fP-Y3D">
-                                <rect key="frame" x="168" y="257.33333333333331" width="78.333333333333314" height="20.333333333333314"/>
+                                <rect key="frame" x="168" y="229.66666666666666" width="78.333333333333314" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -388,6 +392,13 @@
                             <constraint firstItem="0pq-Lw-z4J" firstAttribute="top" secondItem="5hU-fP-Y3D" secondAttribute="bottom" constant="50" id="x3d-Cd-NKP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboutLabel" destination="Djl-y1-adu" id="vcB-cu-5cj"/>
+                        <outlet property="dogLabel" destination="fay-zS-COH" id="ajR-fh-oeP"/>
+                        <outlet property="locationLabel" destination="zRn-Eu-6O9" id="kkJ-Cr-R5t"/>
+                        <outlet property="messageButton" destination="QNq-Gg-UCu" id="jnk-HJ-tUj"/>
+                        <outlet property="usernameLabel" destination="5hU-fP-Y3D" id="SdB-au-Mmi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saX-h1-3sP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

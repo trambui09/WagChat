@@ -71,13 +71,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let user = userData[indexPath.row]
-//        print(user["username"]!)
+        let user = userData[indexPath.row]
+        print(user["username"]!)
 //
         let profileDetailsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileDetailsViewController) as? ProfileDetailsViewController
 
 //        chatViewController?.user2Name = user["username"]!
-//        chatViewController?.user2UID = user["uid"]!
+        profileDetailsViewController?.selectedUserUID = user["uid"]!
 //        chatViewController?.user2ImgUrl = user["photoUrl"]!
 ////        self.view.window?.rootViewController = chatViewController
 ////        self.view.window?.makeKeyAndVisible()
