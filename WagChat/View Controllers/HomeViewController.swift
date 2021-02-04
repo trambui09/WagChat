@@ -74,8 +74,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        let user = userData[indexPath.row]
 //        print(user["username"]!)
 //
-//        let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
-//
+        let profileDetailsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileDetailsViewController) as? ProfileDetailsViewController
+
 //        chatViewController?.user2Name = user["username"]!
 //        chatViewController?.user2UID = user["uid"]!
 //        chatViewController?.user2ImgUrl = user["photoUrl"]!
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 ////
 ////        let chatViewController = ChatViewController()
 //
-//        navigationController?.pushViewController(chatViewController!, animated: true)
+        navigationController?.pushViewController(profileDetailsViewController!, animated: true)
         
         // change to user detail page
         
