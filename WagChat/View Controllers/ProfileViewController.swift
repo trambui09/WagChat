@@ -55,7 +55,18 @@ class ProfileViewController: UIViewController {
         
         imageView.isUserInteractionEnabled = true
         scrollView.isUserInteractionEnabled = true
-
+        
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(didTapChangeProfilePic))
+        
+        imageView.addGestureRecognizer(gesture)
+        
+        // check if there is a value set for the key(user defaults) if yes, download the img
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+              let url = URL(string: urlString) else {
+                return
+        }
+        
         // Do any additional setup after loading the view.
         setUpElements()
         populateTextFields()
