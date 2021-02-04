@@ -16,6 +16,14 @@ class ProfileViewController: UIViewController {
     // refrence to storage..
     private let storage = Storage.storage().reference()
     
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    
     // add profile image
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -42,6 +50,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
+        
+        view.addSubview(imageView)
+        
+        imageView.isUserInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true
 
         // Do any additional setup after loading the view.
         setUpElements()
