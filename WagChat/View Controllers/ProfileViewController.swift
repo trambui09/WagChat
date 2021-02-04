@@ -56,6 +56,8 @@ class ProfileViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         scrollView.isUserInteractionEnabled = true
         
+        setUpElements()
+        
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(didTapChangeProfilePic))
         
@@ -83,7 +85,7 @@ class ProfileViewController: UIViewController {
         task.resume()
         
         // Do any additional setup after loading the view.
-        setUpElements()
+        
         populateTextFields()
     }
     
@@ -97,10 +99,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let size = view.width/3
-        imageView.frame = CGRect(x: (view.width-size)/2,
+        imageView.frame = CGRect(x: (view.width-size)/1,
                                  y: 70,
-                                 width: size,
-                                 height: size)
+                                 width: 100,
+                                 height: 100)
         
         imageView.layer.cornerRadius = imageView.width/2
     }
@@ -266,15 +268,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                    return
                }
         
-        // 2 get the bytes for img
+        // get the bytes for img
         guard let imageData = selectedImage.pngData() else {
             return
         }
         
-        
-        // 3 upload the image data
-        // get downloded url
-        // save downloded url to user defaults
         
         storage.child("images/file.png").putData(imageData,
                                                  metadata: nil,
@@ -298,9 +296,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         self.imageView.image = selectedImage
     }
    
-  
+    // when user cancel taking picture/photo selection
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 
 }
-
-
-

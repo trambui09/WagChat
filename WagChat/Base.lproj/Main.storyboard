@@ -437,6 +437,7 @@
                                     <constraint firstAttribute="height" constant="55" id="0hE-yo-rI5"/>
                                     <constraint firstAttribute="width" constant="55" id="5Ut-5V-1cY"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
                                 <state key="normal" title="WagChat" image="pngkey.com-butt-png-2117336"/>
                                 <connections>
                                     <action selector="wagChatButtonTapped:" destination="WEK-c0-mwI" eventType="touchUpInside" id="a4w-kS-wNj"/>
@@ -490,6 +491,12 @@
                                     <constraint firstItem="Ck8-yq-rAc" firstAttribute="height" secondItem="99f-hP-zyH" secondAttribute="height" id="skZ-cv-oDV"/>
                                 </constraints>
                             </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-X8-Nl2">
+                                <rect key="frame" x="-2" y="-1" width="417" height="737"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="hsK-o4-f4k"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="3gX-30-v9J"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98E-ep-KZB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
