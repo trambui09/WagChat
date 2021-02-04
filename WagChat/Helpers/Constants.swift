@@ -17,5 +17,6 @@ struct Constants {
         static let navigationController = "navigationVC"
         static let firstNavigationController = "firstNavVC"
         static let profileDetailsViewController = "profileDetailsVC"
+        static let thirdNavigationViewController = "thirdNavVC"
     }
 }

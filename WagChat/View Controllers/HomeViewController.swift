@@ -83,8 +83,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 ////        self.view.window?.makeKeyAndVisible()
 ////
 ////        let chatViewController = ChatViewController()
-//
-        navigationController?.pushViewController(profileDetailsViewController!, animated: true)
+        
+//        let thirdNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.thirdNavigationViewController) as? UINavigationController
+////
+//        self.view.window?.rootViewController = thirdNavigationViewController
+        self.view.window?.rootViewController = profileDetailsViewController
+        self.view.window?.makeKeyAndVisible()
         
         // change to user detail page
         
