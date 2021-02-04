@@ -10,6 +10,7 @@ import Firebase
 import FirebaseFirestore
 
 
+
 class SignUpViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
