@@ -8,9 +8,20 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
+
 
 
 class SignUpViewController: UIViewController {
+    
+    // downlod the url from the last uplodaded image??
+//    @IBOutlet var imageView: UIImageView!
+//    @IBOutlet var lable: UILable!
+    
+    // refrence to storage..
+    private let storage = Storage.storage().reference()
+    
+
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -62,6 +73,30 @@ class SignUpViewController: UIViewController {
                                              action: #selector(didTapChangeProfilePic))
         
         imageView.addGestureRecognizer(gesture)
+        
+        // check if there is a value set for the key(user defaults) if yes, download the img
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+              let url = URL(string: urlString) else {
+                return
+        }
+        
+//        label.text = urlString
+        
+        // download data from the url
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            // convert the url to imag
+            // make sure UI updated as soon as we get the respond
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.imageView.image = image
+            }
+        })
+        
+        task.resume()
     }
     
     // will be called when user tap on head
@@ -238,11 +273,42 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
                    return
                }
         
+        // 2 get the bytes for img
+        guard let imageData = selectedImage.pngData() else {
+            return
+        }
+        
+        
+        // 3 upload the image data
+        // get downloded url
+        // save downloded url to user defaults
+        
+        storage.child("images/file.png").putData(imageData,
+                                                 metadata: nil,
+                                                 completion: { _, error in
+                                                    guard error == nil else {
+                                                        print("Failed to upload")
+                                                        return
+                                                    }
+                                                    self.storage.child("images/file.png").downloadURL(completion: { url, error in
+                                                        // make sure error didnt happend
+                                                        guard let url = url, error == nil else {
+                                                            return
+                                                        }
+                                                        let urlString = url.absoluteString
+                                                        print("Download URL: \(urlString)")
+                                                        // save the download url to our user default
+                                                        UserDefaults.standard.set(urlString, forKey: "url")
+                                                    })
+        })
+        
         self.imageView.image = selectedImage
     }
    
     // when user cancel taking picture/photo selection
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
+    
+
 }
