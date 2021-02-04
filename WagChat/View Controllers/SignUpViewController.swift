@@ -249,17 +249,33 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
                    return
                }
         
-        // 2
-        guard let imageData = image.pngData() else {
+        // 2 get the bytes for img
+        guard let imageData = selectedImage.pngData() else {
             return
         }
         
-        // 3
-        storage.putData(imageData, metadata: nil, completion: { _, error in
-            guard error == nil else {
-                print("Failed to uploa")
-                return
-            }
+        
+        // 3 upload the image data
+        // get downloded url
+        // save downloded url to user defaults
+        
+        storage.child("images/file.png").putData(imageData,
+                                                 metadata: nil,
+                                                 completion: { _, error in
+                                                    guard error == nil else {
+                                                        print("Failed to upload")
+                                                        return
+                                                    }
+                                                    self.storage.child("images/file.png").downloadURL(completion: { url, error in
+                                                        // make sure error didnt happend
+                                                        guard let url = url, error == nil else {
+                                                            return
+                                                        }
+                                                        let urlString = url.absoluteString
+                                                        print("Download URL: \(urlString)")
+                                                        // save the download url to our user default
+                                                        UserDefaults.standard.set(urlString, forKey: "url")
+                                                    })
         })
         
         self.imageView.image = selectedImage
@@ -269,4 +285,6 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+
 }
