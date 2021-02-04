@@ -73,6 +73,20 @@ class SignUpViewController: UIViewController {
                                              action: #selector(didTapChangeProfilePic))
         
         imageView.addGestureRecognizer(gesture)
+        
+        // check if there is a value set for the key(user defaults) if yes, download the img
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+              let url = URL(string: urlString) else {
+                return
+        }
+        
+        // download data from the url
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+        })
     }
     
     // will be called when user tap on head
