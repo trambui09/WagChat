@@ -71,8 +71,42 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let user = userData[indexPath.row]
+//        print(user["username"]!)
+//
+//        let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
+//
+//        chatViewController?.user2Name = user["username"]!
+//        chatViewController?.user2UID = user["uid"]!
+//        chatViewController?.user2ImgUrl = user["photoUrl"]!
+////        self.view.window?.rootViewController = chatViewController
+////        self.view.window?.makeKeyAndVisible()
+////
+////        let chatViewController = ChatViewController()
+//
+//        navigationController?.pushViewController(chatViewController!, animated: true)
+        
+        // change to user detail page
+        
+    }
+    
+    private func handleMessage() {
+        print("Marked as to message")
+        
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .normal,
+                                        title: "Message") { [weak self] (action, view, completionHandler) in
+                                            self?.handleMessage()
+                                            completionHandler(true)
+        }
+        action.backgroundColor = .systemBlue
+        
+        
         let user = userData[indexPath.row]
-        print(user["username"]!)
+//        print(user["username"]!)
         
         let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
 
@@ -86,7 +120,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController?.pushViewController(chatViewController!, animated: true)
         
+        return UISwipeActionsConfiguration(actions: [action])
     }
+    
+    // to prevent the delete leading
+//    func tableView(_ tableView: UITableView,
+//                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .none
+//    }
     
     func setUpElements() {
         Utilities.styleFilledButton(logOutButton)
