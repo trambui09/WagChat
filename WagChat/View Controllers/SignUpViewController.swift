@@ -8,10 +8,20 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 
 
 class SignUpViewController: UIViewController {
+    
+    // downlod the url from the last uplodaded image??
+//    @IBOutlet var imageView: UIImageView!
+//    @IBOutlet var lable: UILable!
+    
+    // refrence to storage..
+    private let storage = Storage.storage().reference()
+    
+
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -238,6 +248,19 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
             guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
                    return
                }
+        
+        // 2
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        // 3
+        storage.putData(imageData, metadata: nil, completion: { _, error in
+            guard error == nil else {
+                print("Failed to uploa")
+                return
+            }
+        })
         
         self.imageView.image = selectedImage
     }
