@@ -243,6 +243,6 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
    
     // when user cancel taking picture/photo selection
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
 }

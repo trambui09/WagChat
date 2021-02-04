@@ -26,6 +26,7 @@ target 'WagChat' do
 	pod 'MessageKit'
 	pod 'SDWebImage'
 	pod 'GoogleSignIn'
+	pod 'Firebase/Storage'
 
 	
 
