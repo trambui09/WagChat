@@ -298,11 +298,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         self.imageView.image = selectedImage
     }
    
-    // when user cancel taking picture/photo selection
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
+  
 
 }
 
