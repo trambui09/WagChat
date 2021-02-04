@@ -80,13 +80,23 @@ class SignUpViewController: UIViewController {
                 return
         }
         
+//        label.text = urlString
+        
         // download data from the url
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
             guard let data = data, error == nil else {
                 return
             }
             
+            // convert the url to imag
+            // make sure UI updated as soon as we get the respond
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.imageView.image = image
+            }
         })
+        
+        task.resume()
     }
     
     // will be called when user tap on head
