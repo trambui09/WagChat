@@ -9,8 +9,25 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
+    
+    // refrence to storage..
+    private let storage = Storage.storage().reference()
+    
+    // add profile image
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleToFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        return imageView
+    }()
+    
     @IBOutlet weak var wagChatButton: UIButton!
     
     @IBOutlet weak var dogInfo: UITextField!
