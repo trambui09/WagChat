@@ -99,13 +99,6 @@ class ProfileDetailsViewController: UIViewController {
                         chatViewController?.user2UID = self.selectedUserUID!
                         chatViewController?.user2ImgUrl = document.data()?["photoUrl"]! as? String
                         
-    //
-    //                    let thirdNavVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.thirdNavigationViewController) as? UINavigationController
-    ////
-    //                    thirdNavigationViewController?.pushViewController(chatViewController!, animated: true)
-                        
-    //                    self.view.window?.rootViewController = chatViewController
-    //                    self.view.window?.makeKeyAndVisible()
                         
                         self.navigationController?.pushViewController(chatViewController!, animated: true)
                        

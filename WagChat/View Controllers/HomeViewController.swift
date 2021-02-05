@@ -119,10 +119,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatViewController?.user2Name = user["username"]!
         chatViewController?.user2UID = user["uid"]!
         chatViewController?.user2ImgUrl = user["photoUrl"]!
-//        self.view.window?.rootViewController = chatViewController
-//        self.view.window?.makeKeyAndVisible()
-//
-//        let chatViewController = ChatViewController()
         
         navigationController?.pushViewController(chatViewController!, animated: true)
         
