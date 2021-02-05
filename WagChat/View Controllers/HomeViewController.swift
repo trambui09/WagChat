@@ -87,8 +87,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        let thirdNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.thirdNavigationViewController) as? UINavigationController
 ////
 //        self.view.window?.rootViewController = thirdNavigationViewController
-        self.view.window?.rootViewController = profileDetailsViewController
-        self.view.window?.makeKeyAndVisible()
+//        self.view.window?.rootViewController = profileDetailsViewController
+//        self.view.window?.makeKeyAndVisible()
+        
+        self.navigationController?.pushViewController(profileDetailsViewController!, animated: true)
         
         // change to user detail page
         
@@ -126,6 +128,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
+    
     
     // to prevent the delete leading
 //    func tableView(_ tableView: UITableView,

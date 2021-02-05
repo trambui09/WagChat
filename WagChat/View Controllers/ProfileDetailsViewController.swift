@@ -89,25 +89,29 @@ class ProfileDetailsViewController: UIViewController {
 //                print("Document data: \(dataDescription)")
                 
                 print("is it getting to here?")
-                
-                let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
-                // need a check if the fields are nil or not
-                if document.data()?["uid"] != nil && document.data()?["photoUrl"] != nil &&  document.data()?["username"] != nil {
-                    
-                    print("what about here?")
-                    chatViewController?.user2Name = document.data()?["username"]! as? String
-                    chatViewController?.user2UID = self.selectedUserUID!
-                    chatViewController?.user2ImgUrl = document.data()?["photoUrl"]! as? String
-                    
-
-//                    let thirdNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.thirdNavigationViewController) as? UINavigationController
-////
-//                    thirdNavigationViewController?.pushViewController(chatViewController!, animated: true)
-                    
-                    self.view.window?.rootViewController = chatViewController
-                    self.view.window?.makeKeyAndVisible()
-                   
-                }
+//                DispatchQueue.main.async {
+                    let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
+                    // need a check if the fields are nil or not
+                    if document.data()?["uid"] != nil && document.data()?["photoUrl"] != nil &&  document.data()?["username"] != nil {
+                        
+                        print("what about here?")
+                        chatViewController?.user2Name = document.data()?["username"]! as? String
+                        chatViewController?.user2UID = self.selectedUserUID!
+                        chatViewController?.user2ImgUrl = document.data()?["photoUrl"]! as? String
+                        
+    //
+    //                    let thirdNavVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.thirdNavigationViewController) as? UINavigationController
+    ////
+    //                    thirdNavigationViewController?.pushViewController(chatViewController!, animated: true)
+                        
+    //                    self.view.window?.rootViewController = chatViewController
+    //                    self.view.window?.makeKeyAndVisible()
+                        
+                        self.navigationController?.pushViewController(chatViewController!, animated: true)
+                       
+                      }
+               
+//                }
 
             } else {
                 print("Document does not exist")
