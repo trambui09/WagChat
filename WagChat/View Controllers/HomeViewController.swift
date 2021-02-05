@@ -97,10 +97,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         action.backgroundColor = .systemBlue
         
+        let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
+        
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(Auth.auth().currentUser!.uid)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+
+                // need a check if the fields are nil or not
+                
+//        
+                chatViewController?.currentUserImgUrl = document.data()?["photoUrl"] as? String
+                
+
+            } else {
+                print("Document does not exist")
+            }
+        }
         
         let user = userData[indexPath.row]
 
-        let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
 
         chatViewController?.user2Name = user["username"]!
         chatViewController?.user2UID = user["uid"]!

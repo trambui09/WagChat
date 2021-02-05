@@ -22,6 +22,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     // no imgURL yet
     var user2ImgUrl: String?
+    // variable is an optional, it could be nil or a string
+    var currentUserImgUrl: String?
     
     // what role is DocumentReference playing?
     private var docReference: DocumentReference?
@@ -221,36 +223,37 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
            if message.sender.senderId == currentUser.uid {
             // TODO:
                 if (currentUser.photoURL != nil) {
-                    // load google Oath photo
+                    // load google Oauth photo
                     SDWebImageManager.shared.loadImage(with: currentUser.photoURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                         avatarView.image = image
                     }
                 } else {
                     
                     
-                    var currentUserImgUrl: String?
-                    let db = Firestore.firestore()
-                    print(currentUser.uid)
-                    let docRef = db.collection("users").document(currentUser.uid)
-
-                    docRef.getDocument { (document, error) in
-                        if let document = document, document.exists {
-
-                            // need a check if the fields are nil or not
-                            
-                            print("is it getting in here?")
-                            currentUserImgUrl = document.data()?["photoUrl"]! as? String
-                        
-                            print(currentUserImgUrl ?? "no photo url")
-
-                        } else {
-                            print("Document does not exist")
-                        }
-                    }
-                    print(currentUserImgUrl)
+//                    var currentUserImgUrl: String?
+//                    let db = Firestore.firestore()
+//                    print(currentUser.uid)
+//                    let docRef = db.collection("users").document(currentUser.uid)
+//
+//                    docRef.getDocument { (document, error) in
+//                        if let document = document, document.exists {
+//
+//                            // need a check if the fields are nil or not
+//
+//                            print("is it getting in here?")
+//                            print(document.data() as Any)
+//                            currentUserImgUrl = document.data()?["photoUrl"] as? String
+//
+//                            print(currentUserImgUrl ?? "no photo url")
+//
+//                        } else {
+//                            print("Document does not exist")
+//                        }
+//                    }
+//                    print(currentUserImgUrl!)
                     // load sender photo from DB URL
                     // I've put a placeholder in here for now
-                    SDWebImageManager.shared.loadImage(with: URL(string: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                    SDWebImageManager.shared.loadImage(with: URL(string: currentUserImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                         avatarView.image = image
                     }
                     

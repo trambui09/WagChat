@@ -62,10 +62,12 @@ class ProfileDetailsViewController: UIViewController {
         
         let db = Firestore.firestore()
         let docRef = db.collection("users").document(selectedUserUID!)
+        
+        let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
+                
                 // need a check if the fields are nil or not
                 if document.data()?["uid"] != nil && document.data()?["photoUrl"] != nil &&  document.data()?["username"] != nil {
            
@@ -76,6 +78,22 @@ class ProfileDetailsViewController: UIViewController {
                     self.navigationController?.pushViewController(chatViewController!, animated: true)
                    
                   }
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        
+        let doc = db.collection("users").document(Auth.auth().currentUser!.uid)
+
+        doc.getDocument { (document, error) in
+            if let document = document, document.exists {
+
+                // need a check if the fields are nil or not
+   
+                chatViewController?.currentUserImgUrl = document.data()?["photoUrl"] as? String
+                
+
             } else {
                 print("Document does not exist")
             }
