@@ -59,6 +59,31 @@ class ProfileViewController: UIViewController {
         setUpElements()
         populateTextFields()
         
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(didTapChangeProfilePic))
+        
+        imageView.addGestureRecognizer(gesture)
+        
+        // check if there is a value set for the key(user defaults) if yes, download the img
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+              let url = URL(string: urlString) else {
+                return
+        }
+        // download data from the url
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            // convert the url to imag
+            // make sure UI updated as soon as we get the respond
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.imageView.image = image
+            }
+        })
+    
+        task.resume()
         
         // Do any additional setup after loading the view.
         
