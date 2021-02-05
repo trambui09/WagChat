@@ -9,8 +9,33 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
+    
+    // refrence to storage..
+    private let storage = Storage.storage().reference()
+    
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    
+    // add profile image
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleToFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        return imageView
+    }()
+    
     @IBOutlet weak var wagChatButton: UIButton!
     
     @IBOutlet weak var dogInfo: UITextField!
@@ -25,12 +50,40 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(imageView)
+        
+        imageView.isUserInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true
+        
         setUpElements()
         populateTextFields()
+        
+        
+        // Do any additional setup after loading the view.
+        
+        
     }
     
+    // will be called when user tap on head
+    @objc private func didTapChangeProfilePic() {
+        presentPhotoActionSheet()
+       // print("Change pic called")
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let size = view.width/3
+        imageView.frame = CGRect(x: (view.width-size)/1,
+                                 y: 70,
+                                 width: 100,
+                                 height: 100)
+        
+        imageView.layer.cornerRadius = imageView.width/2
+    }
+    
+
     // populate text fields from firebase
     
     func populateTextFields() {
@@ -134,3 +187,5 @@ class ProfileViewController: UIViewController {
     }
     
 }
+
+
