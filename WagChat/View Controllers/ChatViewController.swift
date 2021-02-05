@@ -23,14 +23,13 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     // no imgURL yet
     var user2ImgUrl: String?
     
+    // what role is DocumentReference playing?
     private var docReference: DocumentReference?
        
     var messages: [Message] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.title = user2Name
 
                 navigationItem.largeTitleDisplayMode = .never
@@ -44,8 +43,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                 messagesCollectionView.messagesDisplayDelegate = self
                 
                 loadChat()
-                
-
+    
         // Do any additional setup after loading the view.
     }
     
@@ -69,12 +67,10 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     func loadChat() {
            
-           //Fetch all the chats which has current user in it
+        //Fetch all the chats which has current user in it
         
-        // don't we want to load the chat with the current user and the selected user, user2uid
            let db = Firestore.firestore().collection("Chats")
                    .whereField("users", arrayContains: Auth.auth().currentUser?.uid ?? "Not Found User 1")
-           
            
            db.getDocuments { (chatQuerySnap, error) in
                
