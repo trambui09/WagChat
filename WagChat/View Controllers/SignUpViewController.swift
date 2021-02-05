@@ -19,7 +19,9 @@ class SignUpViewController: UIViewController {
 //    @IBOutlet var lable: UILable!
     
     // refrence to storage..
-    private let storage = Storage.storage().reference()
+    private let storage = Storage.storage().reference(forURL: "gs://wagchat-30825.appspot.com")
+    // store the photo selected
+    var image: UIImage? = nil
     
 
     
@@ -272,6 +274,16 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
             guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
                    return
                }
+//        image = selectedImage
+//        avatar.image = selectedImage
+        
+//        selected photo will be accesd throgh this dic
+//        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as?
+//            UIImage {
+//            image = imageOriginal
+//            avatar.image = selectedImage
+//        }
+        
         
         // 2 get the bytes for img
         guard let imageData = selectedImage.pngData() else {
@@ -283,14 +295,28 @@ extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationCon
         // get downloded url
         // save downloded url to user defaults
         
-        storage.child("images/file.png").putData(imageData,
+        // refrence to storage..
+//        private let storage = Storage.storage().reference(forURL: "gs://wagchat-30825.appspot.com")
+        
+//        creating node contaning profile images
+        //        create a child node of profile node for each user
+//        let storageRef = storage.child("profile").child(authDta: user.uid)
+
+//       let metadata = StorageMetadata()
+//        metadata.contentType = "image/png"
+        
+        let user = Auth.auth().currentUser
+        
+        let profileImgName = "images/\(user?.uid ?? "file").png"
+        
+        storage.child(profileImgName).putData(imageData,
                                                  metadata: nil,
                                                  completion: { _, error in
                                                     guard error == nil else {
                                                         print("Failed to upload")
                                                         return
                                                     }
-                                                    self.storage.child("images/file.png").downloadURL(completion: { url, error in
+                                                    self.storage.child(profileImgName).downloadURL(completion: { url, error in
                                                         // make sure error didnt happend
                                                         guard let url = url, error == nil else {
                                                             return
