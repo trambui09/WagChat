@@ -189,6 +189,7 @@ class ProfileViewController: UIViewController {
             let locationCity = location.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let aboutSection = about.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+            
             let db = Firestore.firestore()
             db.collection("users").document(String((Auth.auth().currentUser?.uid)!)).setData([
                             "location" : locationCity,
@@ -274,25 +275,42 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         
+        let user = Auth.auth().currentUser
         
-        storage.child("images/file.png").putData(imageData,
-                                                 metadata: nil,
-                                                 completion: { _, error in
-                                                    guard error == nil else {
-                                                        print("Failed to upload")
-                                                        return
-                                                    }
-                                                    self.storage.child("images/file.png").downloadURL(completion: { url, error in
-                                                        // make sure error didnt happend
-                                                        guard let url = url, error == nil else {
-                                                            return
-                                                        }
-                                                        let urlString = url.absoluteString
-                                                        print("Download URL: \(urlString)")
-                                                        // save the download url to our user default
-                                                        UserDefaults.standard.set(urlString, forKey: "url")
-                                                    })
-        })
+        let profileImgName = "images/\(user?.uid ?? "file").png"
+        
+        storage.child(profileImgName).putData(
+            imageData,
+            metadata: nil,
+            completion: { _, error in
+                guard error == nil else {
+                    print("Failed to upload")
+                    return
+                }
+                self.storage.child(profileImgName).downloadURL(completion: { url, error in
+                    // make sure error didnt happend
+                    guard let url = url, error == nil else {
+                        return
+                    }
+                    let urlString = url.absoluteString
+                    print("Download URL: \(urlString)")
+                    // save the download url to our user default
+                    UserDefaults.standard.set(urlString, forKey: "url")
+                    
+                    let db = Firestore.firestore()
+                    db.collection("users").document(String((Auth.auth().currentUser?.uid)!)).setData([
+                        "photoUrl" : urlString
+                      
+                    ], merge: true) { (error) in
+                        if error != nil {
+                            // show error message
+                            print("Error saving user data")
+                        }
+                    }
+//                    showSuccess("Profile Edited!")
+                })
+                
+            })
         
         self.imageView.image = selectedImage
     }
