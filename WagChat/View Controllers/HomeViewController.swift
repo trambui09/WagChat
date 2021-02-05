@@ -72,32 +72,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = userData[indexPath.row]
-        print(user["username"]!)
-//
         let profileDetailsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileDetailsViewController) as? ProfileDetailsViewController
-
-//        chatViewController?.user2Name = user["username"]!
+        
+        // transfer the user uid data from homeViewController to the profileDetailsViewController
         profileDetailsViewController?.selectedUserUID = user["uid"]!
-//        chatViewController?.user2ImgUrl = user["photoUrl"]!
-////        self.view.window?.rootViewController = chatViewController
-////        self.view.window?.makeKeyAndVisible()
-////
-////        let chatViewController = ChatViewController()
-        
-//        let thirdNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.thirdNavigationViewController) as? UINavigationController
-////
-//        self.view.window?.rootViewController = thirdNavigationViewController
-//        self.view.window?.rootViewController = profileDetailsViewController
-//        self.view.window?.makeKeyAndVisible()
-        
+
+        // push to the current nav controller
         self.navigationController?.pushViewController(profileDetailsViewController!, animated: true)
-        
-        // change to user detail page
         
     }
     
     private func handleMessage() {
         print("Marked as to message")
+        // I still think I can put some of the code in method below up here, but I would not have access to the userData[indexPath.row]
         
     }
     
@@ -112,8 +99,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         let user = userData[indexPath.row]
-//        print(user["username"]!)
-        
+
         let chatViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.chatViewController) as? ChatViewController
 
         chatViewController?.user2Name = user["username"]!
@@ -170,10 +156,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func chatsButtonTapped(_ sender: Any) {
         let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
 
-//        self.view.window?.rootViewController = profileViewController
-//        self.view.window?.makeKeyAndVisible()
-        
-    
         navigationController?.pushViewController(profileViewController!, animated: true)
     }
 }
