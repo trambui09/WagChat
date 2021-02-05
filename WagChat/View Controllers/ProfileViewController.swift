@@ -9,8 +9,33 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
+    
+    // refrence to storage..
+    private let storage = Storage.storage().reference()
+    
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    
+    // add profile image
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.circle")
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleToFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 2
+        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        return imageView
+    }()
+    
     @IBOutlet weak var wagChatButton: UIButton!
     
     @IBOutlet weak var dogInfo: UITextField!
@@ -25,12 +50,65 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(imageView)
+        
+        imageView.isUserInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true
+        
         setUpElements()
         populateTextFields()
+        
+        let gesture = UITapGestureRecognizer(target: self,
+                                             action: #selector(didTapChangeProfilePic))
+        
+        imageView.addGestureRecognizer(gesture)
+        
+        // check if there is a value set for the key(user defaults) if yes, download the img
+        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
+              let url = URL(string: urlString) else {
+                return
+        }
+        // download data from the url
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            // convert the url to imag
+            // make sure UI updated as soon as we get the respond
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.imageView.image = image
+            }
+        })
+    
+        task.resume()
+        
+        // Do any additional setup after loading the view.
+        
+        
     }
     
+    // will be called when user tap on head
+    @objc private func didTapChangeProfilePic() {
+        presentPhotoActionSheet()
+       // print("Change pic called")
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let size = view.width/3
+        imageView.frame = CGRect(x: (view.width-size)/1,
+                                 y: 70,
+                                 width: 100,
+                                 height: 100)
+        
+        imageView.layer.cornerRadius = imageView.width/2
+    }
+    
+
     // populate text fields from firebase
     
     func populateTextFields() {
@@ -133,4 +211,96 @@ class ProfileViewController: UIViewController {
     }
     }
     
+}
+
+
+// get the result of user selecting a photo from the camera
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+   // action sheet(take photo or choose photo)
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile Picture",
+                                            message: "How would you like to select a picture?",
+                                            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel,
+                                            handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: "Take Photo",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+                                                
+                                                self?.presentCamera()
+                                                
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+                                                
+                                                self?.presentPhotoPicker()
+                                                
+        }))
+        present(actionSheet, animated: true)
+    }
+    
+    func presentCamera() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+   // when user take a photo/select
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true, completion: nil)
+            print(info)
+            guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+                   return
+               }
+        
+        // get the bytes for img
+        guard let imageData = selectedImage.pngData() else {
+            return
+        }
+        
+        
+        storage.child("images/file.png").putData(imageData,
+                                                 metadata: nil,
+                                                 completion: { _, error in
+                                                    guard error == nil else {
+                                                        print("Failed to upload")
+                                                        return
+                                                    }
+                                                    self.storage.child("images/file.png").downloadURL(completion: { url, error in
+                                                        // make sure error didnt happend
+                                                        guard let url = url, error == nil else {
+                                                            return
+                                                        }
+                                                        let urlString = url.absoluteString
+                                                        print("Download URL: \(urlString)")
+                                                        // save the download url to our user default
+                                                        UserDefaults.standard.set(urlString, forKey: "url")
+                                                    })
+        })
+        
+        self.imageView.image = selectedImage
+    }
+   
+    // when user cancel taking picture/photo selection
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+
 }
