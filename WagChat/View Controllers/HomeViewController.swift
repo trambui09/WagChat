@@ -104,13 +104,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-
-                // need a check if the fields are nil or not
-                
-//        
                 chatViewController?.currentUserImgUrl = document.data()?["photoUrl"] as? String
-                
-
             } else {
                 print("Document does not exist")
             }

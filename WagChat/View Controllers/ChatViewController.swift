@@ -228,35 +228,9 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                         avatarView.image = image
                     }
                 } else {
-                    
-                    
-//                    var currentUserImgUrl: String?
-//                    let db = Firestore.firestore()
-//                    print(currentUser.uid)
-//                    let docRef = db.collection("users").document(currentUser.uid)
-//
-//                    docRef.getDocument { (document, error) in
-//                        if let document = document, document.exists {
-//
-//                            // need a check if the fields are nil or not
-//
-//                            print("is it getting in here?")
-//                            print(document.data() as Any)
-//                            currentUserImgUrl = document.data()?["photoUrl"] as? String
-//
-//                            print(currentUserImgUrl ?? "no photo url")
-//
-//                        } else {
-//                            print("Document does not exist")
-//                        }
-//                    }
-//                    print(currentUserImgUrl!)
-                    // load sender photo from DB URL
-                    // I've put a placeholder in here for now
                     SDWebImageManager.shared.loadImage(with: URL(string: currentUserImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                         avatarView.image = image
                     }
-                    
                 }
                
            } else {
@@ -265,7 +239,4 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                }
            }
        }
-    
-    
-    
 }
