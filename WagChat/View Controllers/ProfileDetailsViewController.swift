@@ -7,9 +7,14 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestore
+import SDWebImage
+
 
 class ProfileDetailsViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var userProfileImage: UIImageView!
+    
     @IBOutlet weak var usernameLabel: UILabel!
     
     
@@ -44,11 +49,14 @@ class ProfileDetailsViewController: UIViewController {
             if let document = document, document.exists {
 
                 // need a check if the fields are nil or not
-                if document.data()?["dogInfo"] != nil && document.data()?["location"] != nil && document.data()?["about"] != nil &&  document.data()?["username"] != nil {
+                if document.data()?["dogInfo"] != nil && document.data()?["location"] != nil && document.data()?["about"] != nil && document.data()?["username"] != nil  && document.data()?["photoUrl"] != nil {
                     self.usernameLabel.text = document.data()?["username"]! as? String
                     self.locationLabel.text = "Location: \(document.data()?["location"]! as? String ?? "No Location")"
                     self.dogLabel.text = "Dog Information: \(document.data()?["dogInfo"]! as? String ?? "No Dog Information")"
                     self.aboutLabel.text = "About: \(document.data()?["about"]! as? String ?? "No About Section")"
+                    
+                    self.userProfileImage.sd_setImage(with: URL(string: (document.data()?["photoUrl"])! as! String), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
+//                    self.userProfileImage.image = document.data()?["photoUrl"]! as? UIImage
                 }
 
             } else {
