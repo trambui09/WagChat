@@ -452,22 +452,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-zg-bhc">
+
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wagchatbackground" translatesAutoresizingMaskIntoConstraints="NO" id="flK-7i-6Fe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-zg-bhc">
-                                <rect key="frame" x="179.66666666666666" y="10" width="55" height="55"/>
-                                <constraints>
+                            
+                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="0hE-yo-rI5"/>
                                     <constraint firstAttribute="width" constant="55" id="5Ut-5V-1cY"/>
                                 </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="14" maxX="5" maxY="5"/>
                                 <state key="normal" title="WagChat" image="pngkey.com-butt-png-2117336"/>
                                 <connections>
                                     <action selector="wagChatButtonTapped:" destination="WEK-c0-mwI" eventType="touchUpInside" id="a4w-kS-wNj"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LUq-fb-3hJ">
-                                <rect key="frame" x="40" y="114.99999999999997" width="334" height="320.33333333333326"/>
+                                <rect key="frame" x="40" y="315" width="334" height="320.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog Information" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99f-hP-zyH">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -523,9 +526,12 @@
                             <constraint firstItem="98E-ep-KZB" firstAttribute="trailing" secondItem="LUq-fb-3hJ" secondAttribute="trailing" constant="40" id="Lxp-vP-0Rp"/>
                             <constraint firstItem="LUq-fb-3hJ" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="QHQ-Me-ziY"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="ShQ-Bl-PGT"/>
+
+                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="250" id="gde-Yx-UbK"/>
                             <constraint firstItem="flK-7i-6Fe" firstAttribute="top" secondItem="E63-eT-ebj" secondAttribute="top" id="YHE-DC-L0S"/>
                             <constraint firstItem="flK-7i-6Fe" firstAttribute="leading" secondItem="E63-eT-ebj" secondAttribute="leading" id="ZUS-2J-G1s"/>
-                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="50" id="gde-Yx-UbK"/>
+                           
+
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="10" id="hwH-b2-XRw"/>
                             <constraint firstAttribute="trailing" secondItem="flK-7i-6Fe" secondAttribute="trailing" id="lbw-dt-Pn0"/>
                         </constraints>
