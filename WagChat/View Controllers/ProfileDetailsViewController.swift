@@ -20,7 +20,7 @@ class ProfileDetailsViewController: UIViewController {
     
     @IBOutlet weak var locationLabel: UILabel!
     
-    @IBOutlet weak var dogLabel: UILabel!
+//    @IBOutlet weak var dogLabel: UILabel!
     
     @IBOutlet weak var aboutLabel: UILabel!
     
@@ -50,11 +50,12 @@ class ProfileDetailsViewController: UIViewController {
 
                 // need a check if the fields are nil or not
                 if document.data()?["dogInfo"] != nil && document.data()?["location"] != nil && document.data()?["about"] != nil && document.data()?["username"] != nil  && document.data()?["photoUrl"] != nil {
-                    self.usernameLabel.text = document.data()?["username"]! as? String
-                    self.locationLabel.text = "Location: \(document.data()?["location"]! as? String ?? "No Location")"
-                    self.dogLabel.text = "Dog Information: \(document.data()?["dogInfo"]! as? String ?? "No Dog Information")"
-                    self.aboutLabel.text = "About: \(document.data()?["about"]! as? String ?? "No About Section")"
+                    self.usernameLabel.text = "\(document.data()?["username"]! as? String ?? "No username"), \(document.data()?["dogInfo"]! as? String ?? "No dog info")"
+                    self.locationLabel.text = document.data()?["location"]! as? String
+//                    self.dogLabel.text = "Dog Information: \(document.data()?["dogInfo"]! as? String ?? "No Dog Information")"
+                    self.aboutLabel.text = document.data()?["about"]! as? String
                     self.aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+                    self.aboutLabel.alpha = 1
 
                     
                     self.userProfileImage.sd_setImage(with: URL(string: (document.data()?["photoUrl"])! as! String), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
