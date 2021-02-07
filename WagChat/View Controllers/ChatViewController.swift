@@ -222,16 +222,16 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
            
            if message.sender.senderId == currentUser.uid {
             // TODO:
-                if (currentUser.photoURL != nil) {
-                    // load google Oauth photo
-                    SDWebImageManager.shared.loadImage(with: currentUser.photoURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-                        avatarView.image = image
-                    }
-                } else {
+//                if (currentUser.photoURL != nil) {
+//                    // load google Oauth photo
+//                    SDWebImageManager.shared.loadImage(with: currentUser.photoURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+//                        avatarView.image = image
+//                    }
+//                } else {
                     SDWebImageManager.shared.loadImage(with: URL(string: currentUserImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                         avatarView.image = image
                     }
-                }
+//                }
                
            } else {
                SDWebImageManager.shared.loadImage(with: URL(string: user2ImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
