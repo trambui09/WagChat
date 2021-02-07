@@ -67,8 +67,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             cell?.textLabel?.text = user["username"]
         }
+        // attach a circle avatar image next to the username
+        cell?.imageView?.layer.cornerRadius = cell?.imageView?.frame.size.width ?? 60 / 2;
+        cell?.imageView?.clipsToBounds = true;
+        // do we need a UIImage view?
+        cell?.imageView?.sd_setImage(with: URL(string: (user["photoUrl"])! ), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
+        
+        // making the image be rounded
+        
+        
+       
         return cell!
     }
+    // increasing the height on the cell in UITableview
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 60 //or whatever you need
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = userData[indexPath.row]
