@@ -221,20 +221,20 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
    // action sheet(take photo or choose photo)
     func presentPhotoActionSheet() {
         let actionSheet = UIAlertController(title: "Profile Picture",
-                                            message: "How would you like to select a picture?",
+                                            message: "Please select your profile picture",
                                             preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Cancel",
                                             style: .cancel,
                                             handler: nil))
         
-        actionSheet.addAction(UIAlertAction(title: "Take Photo",
-                                            style: .default,
-                                            handler: { [weak self] _ in
-                                                
-                                                self?.presentCamera()
-                                                
-        }))
+//        actionSheet.addAction(UIAlertAction(title: "Take Photo",
+//                                            style: .default,
+//                                            handler: { [weak self] _ in
+//
+//                                                self?.presentCamera()
+//
+//        }))
         
         actionSheet.addAction(UIAlertAction(title: "Choose Photo",
                                             style: .default,
