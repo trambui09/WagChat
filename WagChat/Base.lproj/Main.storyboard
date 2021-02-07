@@ -466,7 +466,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LUq-fb-3hJ">
-                                <rect key="frame" x="40" y="114.99999999999997" width="334" height="320.33333333333326"/>
+                                <rect key="frame" x="40" y="315" width="334" height="320.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog Information" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99f-hP-zyH">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -521,7 +521,7 @@
                             <constraint firstItem="98E-ep-KZB" firstAttribute="trailing" secondItem="LUq-fb-3hJ" secondAttribute="trailing" constant="40" id="Lxp-vP-0Rp"/>
                             <constraint firstItem="LUq-fb-3hJ" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="QHQ-Me-ziY"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="ShQ-Bl-PGT"/>
-                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="50" id="gde-Yx-UbK"/>
+                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="250" id="gde-Yx-UbK"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="10" id="hwH-b2-XRw"/>
                         </constraints>
                     </view>
