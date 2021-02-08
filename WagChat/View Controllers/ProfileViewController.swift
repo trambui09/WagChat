@@ -100,10 +100,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let size = view.width/3
-        imageView.frame = CGRect(x: (view.width-size)/3,
+        imageView.frame = CGRect(x: (view.width-size)/2.5,
                                  y: 140,
-                                 width: 200,
-                                 height: 200)
+                                 width: 160,
+                                 height: 160)
         
         imageView.layer.cornerRadius = imageView.width/2
     }
