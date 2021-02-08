@@ -7,6 +7,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseDatabase
+import SDWebImage
 
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -18,6 +19,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // initiate a variable to store users data
     var userData: [[String: String]] = []
+    var userPhoto: [[String: String]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let uid = document.data()["uid"] as! String
                     let photoUrl = document.data()["photoUrl"] as! String
 
-                    let user = ["username": username, "uid": uid, "photoUrl": photoUrl]
+                    let user = ["username": username, "uid": uid]
                     self.userData.append(user)
+                    self.userPhoto.append(["photoUrl": photoUrl])
                     
                 }
                 self.tableView.reloadData()
@@ -59,6 +62,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
         let user = userData[indexPath.row]
+        let userPhotoUrl = userPhoto[indexPath.row]
         
         // how to check if username is the current username so we can put a marker
         // to say it's you
@@ -67,11 +71,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             cell?.textLabel?.text = user["username"]
         }
+        
+        let size = view.width/3
+        cell?.imageView?.frame = CGRect(x: (view.width-size)/3, y: 140, width: 30, height: 30)
         // attach a circle avatar image next to the username
         cell?.imageView?.layer.cornerRadius = cell?.imageView?.frame.size.width ?? 60 / 2;
         cell?.imageView?.clipsToBounds = true;
         // do we need a UIImage view?
-        cell?.imageView?.sd_setImage(with: URL(string: (user["photoUrl"])! ), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
+        cell?.imageView?.sd_setImage(with: URL(string: (userPhotoUrl["photoUrl"])! ), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
         
         // making the image be rounded
         
