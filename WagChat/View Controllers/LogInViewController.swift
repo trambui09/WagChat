@@ -18,12 +18,12 @@ class LogInViewController: UIViewController {
     }()
     
     // add logo to login view
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "pngkey.com-butt-png-2117336")
-        imageView.contentMode = .scaleToFill
-        return imageView
-    }()
+//    private let imageView: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(named: "pngkey.com-butt-png-2117336")
+//        imageView.contentMode = .scaleToFill
+//        return imageView
+//    }()
 
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -39,19 +39,19 @@ class LogInViewController: UIViewController {
 
         // Do any additional setup after loading the view.
        // add subViews
-        view.addSubview(imageView)
+//        view.addSubview(imageView)
         
         setUpElements()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let size = view.width/4
-        imageView.frame = CGRect(x: (view.width-size)/2,
-                                 y: 90,
-                                 width: 80,
-                                 height: 80)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        let size = view.width/4
+//        imageView.frame = CGRect(x: (view.width-size)/2,
+//                                 y: 90,
+//                                 width: 80,
+//                                 height: 80)
+//    }
     
     func setUpElements() {
         errorLabel.alpha = 0
