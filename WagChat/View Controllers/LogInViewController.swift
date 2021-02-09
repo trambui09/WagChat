@@ -108,7 +108,19 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func forgotPassButton_Tapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "forgotPassSegue", sender: nil)
+        let auth = Auth.auth()
+        
+        auth.sendPasswordReset(withEmail: emailTextField.text!) { (error) in
+            if let error = error {
+                let alert = UIAlertController(title: "Error", message: "Failed", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            let alert = UIAlertController(title: "Hurray", message: "Password reset email has been sent!", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
     }
     
 }
