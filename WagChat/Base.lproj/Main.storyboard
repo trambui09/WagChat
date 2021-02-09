@@ -253,6 +253,47 @@
             </objects>
             <point key="canvasLocation" x="1812" y="-345"/>
         </scene>
+        <!--New User Welcome View Controller-->
+        <scene sceneID="TD8-BH-yI1">
+            <objects>
+                <viewController storyboardIdentifier="newUserWelcomeVC" id="SE4-hx-3gI" customClass="NewUserWelcomeViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="65Y-5s-q8N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to WagChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C01-eS-kUA">
+                                <rect key="frame" x="124.66666666666669" y="357.66666666666669" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="533-wU-VWw">
+                                <rect key="frame" x="40" y="578.66666666666663" width="334" height="30"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueToProfileButtonTapped:" destination="SE4-hx-3gI" eventType="touchUpInside" id="fII-zS-vY8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="x6D-KE-FTs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="533-wU-VWw" firstAttribute="top" secondItem="C01-eS-kUA" secondAttribute="bottom" constant="200" id="GYW-HF-Ap3"/>
+                            <constraint firstItem="C01-eS-kUA" firstAttribute="centerY" secondItem="65Y-5s-q8N" secondAttribute="centerY" id="LBi-fE-LYc"/>
+                            <constraint firstItem="C01-eS-kUA" firstAttribute="centerX" secondItem="65Y-5s-q8N" secondAttribute="centerX" id="Uji-6g-kxO"/>
+                            <constraint firstItem="533-wU-VWw" firstAttribute="centerX" secondItem="65Y-5s-q8N" secondAttribute="centerX" id="YZf-oJ-4Z7"/>
+                            <constraint firstItem="533-wU-VWw" firstAttribute="leading" secondItem="x6D-KE-FTs" secondAttribute="leading" constant="40" id="Zj1-qG-WVw"/>
+                            <constraint firstItem="x6D-KE-FTs" firstAttribute="trailing" secondItem="533-wU-VWw" secondAttribute="trailing" constant="40" id="nVi-di-nQQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueToProfileButton" destination="65Y-5s-q8N" id="D1j-Bf-Buz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzV-FW-X3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2585.507246376812" y="-634.23913043478262"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="h8C-IZ-NQ7">
             <objects>

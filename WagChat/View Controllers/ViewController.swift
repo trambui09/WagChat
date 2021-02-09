@@ -79,9 +79,15 @@ class ViewController: UIViewController, GIDSignInDelegate  {
                                 }
                             }
                 
-                let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
-    
-                self.view.window?.rootViewController = profileViewController
+//                let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
+//
+//                self.view.window?.rootViewController = profileViewController
+//                self.view.window?.makeKeyAndVisible()
+                
+                
+                let newUserViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.newUserWelcomeVC) as? NewUserWelcomeViewController
+
+                self.view.window?.rootViewController = newUserViewController
                 self.view.window?.makeKeyAndVisible()
                 
                 
