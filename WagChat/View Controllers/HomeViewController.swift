@@ -48,13 +48,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                    self.userPhoto.append(["photoUrl": photoUrl])
                     
                 }
-                self.tableView.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.tableView.reloadData()
+                    let indexPath = IndexPath.init(row: 0, section: 0)
+                    self.tableView.reloadRows(at: [indexPath], with: .fade)
+                }
             }
         }
     }
     
     // table row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
         return userData.count
     }
     // table cell
@@ -62,6 +67,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
         let user = userData[indexPath.row]
+        tableView.reloadRows(at: [indexPath], with: .none)
 //        let userPhotoUrl = userPhoto[indexPath.row]
         
         // how to check if username is the current username so we can put a marker
@@ -73,12 +79,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         let size = view.width/3
-        cell?.imageView?.frame = CGRect(x: (view.width-size)/3, y: 140, width: 30, height: 30)
+        cell?.imageView?.frame = CGRect(x: (view.width-size)/3, y: 140, width: 30, height: 20)
         // attach a circle avatar image next to the username
         cell?.imageView?.layer.cornerRadius = cell?.imageView?.frame.size.width ?? 60 / 2;
         cell?.imageView?.clipsToBounds = true;
         // do we need a UIImage view?
-        cell?.imageView?.sd_setImage(with: URL(string: (user["photoUrl"])! ), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
+        
+        DispatchQueue.main.async {
+            cell?.imageView?.sd_setImage(with: URL(string: (user["photoUrl"])! ), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
+        }
+        
+       
+       
         
         // making the image be rounded
         
@@ -96,6 +108,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = userData[indexPath.row]
+        tableView.reloadRows(at: [indexPath], with: .none)
         let profileDetailsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileDetailsViewController) as? ProfileDetailsViewController
         
         // transfer the user uid data from homeViewController to the profileDetailsViewController
