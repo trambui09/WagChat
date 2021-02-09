@@ -33,6 +33,7 @@ class LogInViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Log In"
@@ -105,4 +106,9 @@ class LogInViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func forgotPassButton_Tapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "forgotPassSegue", sender: nil)
+    }
+    
 }

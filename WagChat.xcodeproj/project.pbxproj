@@ -29,6 +29,7 @@
 		0D0F2C9E25C4B26A0005034B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C9D25C4B26A0005034B /* Chat.swift */; };
 		0D5474D225CC956A0041C3A4 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5474D125CC956A0041C3A4 /* ProfileDetailsViewController.swift */; };
 		602ED87125C92EBE009447C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ED87025C92EBE009447C6 /* Extension.swift */; };
+		609AF2B925D255C6003A21EB /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AF2B825D255C6003A21EB /* ForgotPassViewController.swift */; };
 		63559828494339F063E7B0B0 /* Pods_WagChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598E87DE4348357904E75103 /* Pods_WagChatTests.framework */; };
 		8A52816B55F51F68C4E36DA4 /* Pods_WagChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3F77094969178938715844 /* Pods_WagChat.framework */; };
 		CBB7ED599E611848C21FD258 /* Pods_WagChat_WagChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D3C44DF0A26141AA87E544 /* Pods_WagChat_WagChatUITests.framework */; };
@@ -80,6 +81,7 @@
 		0D5474D125CC956A0041C3A4 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		598E87DE4348357904E75103 /* Pods_WagChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		602ED87025C92EBE009447C6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		609AF2B825D255C6003A21EB /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat.release.xcconfig"; path = "Target Support Files/Pods-WagChat/Pods-WagChat.release.xcconfig"; sourceTree = "<group>"; };
 		8156C62A4604983120AEC266 /* Pods-WagChat-WagChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat-WagChatUITests.release.xcconfig"; path = "Target Support Files/Pods-WagChat-WagChatUITests/Pods-WagChat-WagChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		92F435ED2360D1578EA2AD4C /* Pods-WagChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChatTests.release.xcconfig"; path = "Target Support Files/Pods-WagChatTests/Pods-WagChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0D0F2C6525C34C990005034B /* ProfileViewController.swift */,
 				0D0F2C9325C4B2230005034B /* ChatViewController.swift */,
 				0D5474D125CC956A0041C3A4 /* ProfileDetailsViewController.swift */,
+				609AF2B825D255C6003A21EB /* ForgotPassViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				0D0F2B3625C083160005034B /* AppDelegate.swift in Sources */,
 				0D0F2C9425C4B2240005034B /* ChatViewController.swift in Sources */,
 				0D0F2B6925C08FA30005034B /* SignUpViewController.swift in Sources */,
+				609AF2B925D255C6003A21EB /* ForgotPassViewController.swift in Sources */,
 				0D0F2B6E25C08FBE0005034B /* LogInViewController.swift in Sources */,
 				0D0F2B3825C083160005034B /* SceneDelegate.swift in Sources */,
 				0D0F2B7325C08FCE0005034B /* HomeViewController.swift in Sources */,

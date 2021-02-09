@@ -100,6 +100,47 @@
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="93.750000000000014"/>
         </scene>
+        <!--Forgot Pass View Controller-->
+        <scene sceneID="Xlu-bL-mg6">
+            <objects>
+                <viewController id="wBF-JY-7cu" customClass="ForgotPassViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eMQ-Cp-Ioh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Forgot Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJJ-WU-Kjd">
+                                <rect key="frame" x="133" y="107" width="137" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWE-x2-Zor">
+                                <rect key="frame" x="75" y="186" width="261" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLh-yA-Xtu">
+                                <rect key="frame" x="175" y="259" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="forgotPassButton_Tapped:" destination="wBF-JY-7cu" eventType="touchUpInside" id="Gtp-YS-by8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EHh-Se-JHZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JQH-Kd-it5"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="JWE-x2-Zor" id="VKH-Rq-agY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ6-T1-xb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2651" y="869"/>
+        </scene>
         <!--Log In View Controller-->
         <scene sceneID="ICq-sL-19f">
             <objects>
@@ -109,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IFw-dS-Sqv">
-                                <rect key="frame" x="40" y="159" width="334" height="230.33333333333337"/>
+                                <rect key="frame" x="40" y="158.99999999999997" width="334" height="280.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRd-ov-BiE">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -131,8 +172,15 @@
                                             <action selector="loginTapped:" destination="bkX-Ez-8Ea" eventType="touchUpInside" id="HEG-vL-kCK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWZ-KA-KWY">
+                                        <rect key="frame" x="0.0" y="210" width="334" height="30"/>
+                                        <state key="normal" title="Forgot Password"/>
+                                        <connections>
+                                            <action selector="forgotPassButton_Tapped:" destination="bkX-Ez-8Ea" eventType="touchUpInside" id="BwR-Ky-L7i"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1N-VM-lX6">
-                                        <rect key="frame" x="0.0" y="210" width="334" height="20.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="260" width="334" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -167,6 +215,7 @@
                         <outlet property="errorLabel" destination="a1N-VM-lX6" id="hWm-be-YmK"/>
                         <outlet property="loginButton" destination="FeY-Rx-uRK" id="ozz-G3-muh"/>
                         <outlet property="passwordTextField" destination="lmm-JY-Ulu" id="aPI-N7-IZX"/>
+                        <segue destination="wBF-JY-7cu" kind="show" identifier="forgotPassSegue" id="UJo-CS-Xd5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRa-0V-2Eh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
