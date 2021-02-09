@@ -54,8 +54,8 @@ class ProfileDetailsViewController: UIViewController {
                     self.locationLabel.text = document.data()?["location"]! as? String
 //                    self.dogLabel.text = "Dog Information: \(document.data()?["dogInfo"]! as? String ?? "No Dog Information")"
                     self.aboutLabel.text = document.data()?["about"]! as? String
-                    self.aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-                    self.aboutLabel.alpha = 1
+//                    self.aboutLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                    self.aboutLabel.alpha = 1
 
                     
                     self.userProfileImage.sd_setImage(with: URL(string: (document.data()?["photoUrl"])! as! String), placeholderImage: UIImage(named: "https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
