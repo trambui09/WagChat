@@ -28,6 +28,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="NGQ-kv-wsQ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Sign Up">
                                             <imageReference key="image" image="person.crop.circle.fill" catalog="system" symbolScale="large"/>
@@ -42,6 +43,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ga2-Lm-WAv"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
