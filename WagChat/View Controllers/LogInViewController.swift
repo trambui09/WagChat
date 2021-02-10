@@ -107,20 +107,33 @@ class LogInViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotPassButton_Tapped(_ sender: Any) {
-        let auth = Auth.auth()
-        
-        auth.sendPasswordReset(withEmail: emailTextField.text!) { (error) in
-            if let error = error {
-                let alert = UIAlertController(title: "Error", message: "Failed", preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
-            
-            let alert = UIAlertController(title: "Hurray", message: "Password reset email has been sent!", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            
-        }
-    }
     
+    @IBAction func forgotPassButton_Tapped(_ sender: Any) {
+        
+        let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
+            forgotPasswordAlert.addTextField { (textField) in
+                textField.placeholder = "Enter email address"
+        }
+        
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Reset Password", style: .default, handler: { (action) in
+                let resetEmail = forgotPasswordAlert.textFields?.first?.text
+            
+            Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                    if error != nil{
+                        let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: \(String(describing: error?.localizedDescription))", preferredStyle: .alert)
+                        resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(resetFailedAlert, animated: true, completion: nil)
+                    }else {
+                        let resetEmailSentAlert = UIAlertController(title: "Reset email sent successfully", message: "Check your email", preferredStyle: .alert)
+                        resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(resetEmailSentAlert, animated: true, completion: nil)
+                    }
+                })
+            }))
+        //PRESENT ALERT
+        self.present(forgotPasswordAlert, animated: true, completion: nil)
+        
+    }
 }

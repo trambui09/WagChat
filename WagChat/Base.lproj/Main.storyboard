@@ -103,18 +103,12 @@
         <!--Forgot Pass View Controller-->
         <scene sceneID="Xlu-bL-mg6">
             <objects>
-                <viewController id="wBF-JY-7cu" customClass="ForgotPassViewController" sceneMemberID="viewController">
+                <viewController id="wBF-JY-7cu" customClass="ForgotPassViewController" customModule="WagChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMQ-Cp-Ioh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Forgot Password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJJ-WU-Kjd">
-                                <rect key="frame" x="133" y="107" width="137" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWE-x2-Zor">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWE-x2-Zor">
                                 <rect key="frame" x="75" y="186" width="261" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -124,22 +118,23 @@
                                 <rect key="frame" x="175" y="259" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="forgotPassButton_Tapped:" destination="wBF-JY-7cu" eventType="touchUpInside" id="Gtp-YS-by8"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vx5-zq-OCA">
+                                <rect key="frame" x="128" y="110" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EHh-Se-JHZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="JQH-Kd-it5"/>
-                    <connections>
-                        <outlet property="emailTextField" destination="JWE-x2-Zor" id="VKH-Rq-agY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ6-T1-xb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2651" y="869"/>
+            <point key="canvasLocation" x="2650.7246376811595" y="868.20652173913049"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="ICq-sL-19f">
@@ -176,7 +171,7 @@
                                         <rect key="frame" x="0.0" y="210" width="334" height="30"/>
                                         <state key="normal" title="Forgot Password"/>
                                         <connections>
-                                            <action selector="forgotPassButton_Tapped:" destination="bkX-Ez-8Ea" eventType="touchUpInside" id="BwR-Ky-L7i"/>
+                                            <action selector="forgotPassButton_Tapped:" destination="bkX-Ez-8Ea" eventType="touchUpInside" id="MxV-tt-p0W"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1N-VM-lX6">
@@ -215,7 +210,6 @@
                         <outlet property="errorLabel" destination="a1N-VM-lX6" id="hWm-be-YmK"/>
                         <outlet property="loginButton" destination="FeY-Rx-uRK" id="ozz-G3-muh"/>
                         <outlet property="passwordTextField" destination="lmm-JY-Ulu" id="aPI-N7-IZX"/>
-                        <segue destination="wBF-JY-7cu" kind="show" identifier="forgotPassSegue" id="UJo-CS-Xd5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRa-0V-2Eh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
