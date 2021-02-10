@@ -47,12 +47,12 @@ class SignUpViewController: UIViewController {
         // hide the error
         errorLabel.alpha = 0
         
-        Utilities.styleTextField(usernameTextField)
+//        Utilities.styleTextField(usernameTextField)
 //        Utilities.styleTextField(locationTextField)
 //        Utilities.styleTextField(dogInfoTextField)
 //        Utilities.styleTextField(topicsTextField)
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
+//        Utilities.styleTextField(emailTextField)
+//        Utilities.styleTextField(passwordTextField)
         
         Utilities.styleFilledButton(signUpButton)
     }
