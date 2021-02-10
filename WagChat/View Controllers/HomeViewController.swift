@@ -78,6 +78,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell?.textLabel?.text = user["username"]
         }
         
+       
         let size = view.width/3
         cell?.imageView?.frame = CGRect(x: (view.width-size)/3, y: 140, width: 30, height: 20)
         // attach a circle avatar image next to the username
