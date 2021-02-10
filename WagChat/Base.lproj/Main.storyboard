@@ -108,7 +108,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wagchat-login-background" translatesAutoresizingMaskIntoConstraints="NO" id="90S-HM-eeo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more_clear_log_in" translatesAutoresizingMaskIntoConstraints="NO" id="90S-HM-eeo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IFw-dS-Sqv">
@@ -680,9 +680,9 @@ WagChat!</string>
     <resources>
         <image name="Google" width="285" height="69"/>
         <image name="google.png" width="18" height="18"/>
+        <image name="more_clear_log_in" width="1080" height="1920"/>
         <image name="newuserVC.gif" width="480" height="480"/>
         <image name="pngkey.com-butt-png-2117336" width="434" height="423"/>
-        <image name="wagchat-login-background" width="168" height="300"/>
         <image name="wagchat-sign-up" width="700" height="1244"/>
         <image name="wagchatbackground" width="1280" height="1024"/>
         <systemColor name="systemBackgroundColor">
