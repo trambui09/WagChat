@@ -6,14 +6,19 @@
 import UIKit
 
 class NewUserWelcomeViewController: UIViewController {
-    @IBOutlet var continueToProfileButton: UIView!
+//    @IBOutlet var continueToProfileButton: UIButton!
     
+    @IBOutlet weak var continueToProfileButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpElements()
 
         // Do any additional setup after loading the view.
     }
     
+    func setUpElements() {
+        Utilities.styleFilledButton(continueToProfileButton)
+    }
 
     /*
     // MARK: - Navigation

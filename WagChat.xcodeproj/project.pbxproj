@@ -29,6 +29,7 @@
 		0D0F2C9E25C4B26A0005034B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F2C9D25C4B26A0005034B /* Chat.swift */; };
 		0D5474D225CC956A0041C3A4 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5474D125CC956A0041C3A4 /* ProfileDetailsViewController.swift */; };
 		0D5474DD25D3369B0041C3A4 /* NewUserWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5474DC25D3369A0041C3A4 /* NewUserWelcomeViewController.swift */; };
+		0D54750925D36C890041C3A4 /* newuserVC.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0D54750825D36C890041C3A4 /* newuserVC.gif */; };
 		602ED87125C92EBE009447C6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602ED87025C92EBE009447C6 /* Extension.swift */; };
 		63559828494339F063E7B0B0 /* Pods_WagChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 598E87DE4348357904E75103 /* Pods_WagChatTests.framework */; };
 		8A52816B55F51F68C4E36DA4 /* Pods_WagChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3F77094969178938715844 /* Pods_WagChat.framework */; };
@@ -80,6 +81,7 @@
 		0D0F2C9D25C4B26A0005034B /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		0D5474D125CC956A0041C3A4 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		0D5474DC25D3369A0041C3A4 /* NewUserWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserWelcomeViewController.swift; sourceTree = "<group>"; };
+		0D54750825D36C890041C3A4 /* newuserVC.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newuserVC.gif; sourceTree = "<group>"; };
 		598E87DE4348357904E75103 /* Pods_WagChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WagChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		602ED87025C92EBE009447C6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6150E9242B2C7D9CD7897DA7 /* Pods-WagChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WagChat.release.xcconfig"; path = "Target Support Files/Pods-WagChat/Pods-WagChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				0D0F2B3E25C0831A0005034B /* Assets.xcassets */,
 				0D0F2B4025C0831A0005034B /* LaunchScreen.storyboard */,
 				0D0F2B4325C0831A0005034B /* Info.plist */,
+				0D54750825D36C890041C3A4 /* newuserVC.gif */,
 				0D0F2C9825C4B24E0005034B /* Message.swift */,
 				0D0F2C9D25C4B26A0005034B /* Chat.swift */,
 				602ED87025C92EBE009447C6 /* Extension.swift */,
@@ -339,6 +342,7 @@
 				0D0F2B3F25C0831A0005034B /* Assets.xcassets in Resources */,
 				0D0F2B3D25C083160005034B /* Main.storyboard in Resources */,
 				0D0F2BE125C0D8400005034B /* GoogleService-Info.plist in Resources */,
+				0D54750925D36C890041C3A4 /* newuserVC.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,8 @@ target 'WagChat' do
 	pod 'SDWebImage'
 	pod 'GoogleSignIn'
 	pod 'Firebase/Storage'
+	pod 'TinyConstraints'
+	pod 'Gifu'
 
 	
 
