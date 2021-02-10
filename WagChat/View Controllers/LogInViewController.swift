@@ -48,12 +48,23 @@ class LogInViewController: UIViewController {
         passwordTextField.rightView = button
         passwordTextField.rightViewMode = .always
         
-        
         // Do any additional setup after loading the view.
         // add subViews
         //        view.addSubview(imageView)
         
         setUpElements()
+    }
+    
+    // dispaly password fun
+    @IBAction func btnPasswordVisiblityClicked(_ sender: Any) {
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        if (sender as! UIButton).isSelected {
+            self.passwordTextField.isSecureTextEntry = false
+            button.setImage(UIImage(name: "eye.slash"), for: .normal)
+        } else {
+            self.passwordTextField.isSecureTextEntry = true
+            button.setImage(UIImage(name: "eye.slash"), for: .normal)
+        }
     }
     
 //    override func viewDidLayoutSubviews() {
