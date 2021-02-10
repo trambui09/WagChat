@@ -54,6 +54,17 @@ class SignUpViewController: UIViewController {
         setUpElements()
     }
     
+    // dispaly password fun
+    @IBAction func btnPasswordVisiblityClicked(_ sender: Any) {
+        (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
+        if (sender as! UIButton).isSelected {
+            self.passwordTextField.isSecureTextEntry = false
+            button.setImage(UIImage(named: "eye_open.png"), for: .normal)
+        } else {
+            self.passwordTextField.isSecureTextEntry = true
+            button.setImage(UIImage(named: "eye_closed.png"), for: .normal)
+        }
+    }
     
     func setUpElements() {
         
