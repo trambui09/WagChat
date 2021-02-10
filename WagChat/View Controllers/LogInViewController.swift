@@ -60,12 +60,13 @@ class LogInViewController: UIViewController {
         (sender as! UIButton).isSelected = !(sender as! UIButton).isSelected
         if (sender as! UIButton).isSelected {
             self.passwordTextField.isSecureTextEntry = false
-            button.setImage(UIImage(name: "eye.slash"), for: .normal)
+            button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         } else {
             self.passwordTextField.isSecureTextEntry = true
-            button.setImage(UIImage(name: "eye.slash"), for: .normal)
+            button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         }
     }
+   
     
 //    override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
