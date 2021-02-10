@@ -289,26 +289,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newuserVC.gif" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-gp-XFm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserWelcomeScreen" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-gp-XFm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C01-eS-kUA">
-                                <rect key="frame" x="136.33333333333337" y="5" width="141.66666666666663" height="104"/>
-                                <string key="text">Welcome 
-to 
-WagChat!</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to WagChat!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C01-eS-kUA">
+                                <rect key="frame" x="40" y="200" width="334" height="34.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We would like to learn a little bit more about you..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51R-3Z-WTw">
-                                <rect key="frame" x="40" y="583.66666666666663" width="334" height="57.333333333333371"/>
+                                <rect key="frame" x="40" y="593.66666666666663" width="334" height="57.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="533-wU-VWw">
-                                <rect key="frame" x="40" y="656" width="334" height="50"/>
+                                <rect key="frame" x="40" y="666" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bmn-s6-4dk"/>
                                 </constraints>
@@ -324,12 +321,14 @@ WagChat!</string>
                             <constraint firstItem="x6D-KE-FTs" firstAttribute="trailing" secondItem="rnH-gp-XFm" secondAttribute="trailing" id="3ge-2m-Tp4"/>
                             <constraint firstItem="x6D-KE-FTs" firstAttribute="bottom" secondItem="rnH-gp-XFm" secondAttribute="bottom" id="7Co-ag-2Ef"/>
                             <constraint firstItem="51R-3Z-WTw" firstAttribute="leading" secondItem="65Y-5s-q8N" secondAttribute="leading" constant="40" id="Ex8-MY-PkX"/>
-                            <constraint firstItem="C01-eS-kUA" firstAttribute="top" secondItem="x6D-KE-FTs" secondAttribute="top" constant="5" id="Rkv-Wk-eBB"/>
+                            <constraint firstItem="C01-eS-kUA" firstAttribute="leading" secondItem="x6D-KE-FTs" secondAttribute="leading" constant="40" id="MAt-YT-EW4"/>
+                            <constraint firstItem="x6D-KE-FTs" firstAttribute="trailing" secondItem="C01-eS-kUA" secondAttribute="trailing" constant="40" id="QQX-9x-oph"/>
+                            <constraint firstItem="C01-eS-kUA" firstAttribute="top" secondItem="x6D-KE-FTs" secondAttribute="top" constant="200" id="Rkv-Wk-eBB"/>
                             <constraint firstItem="533-wU-VWw" firstAttribute="top" secondItem="51R-3Z-WTw" secondAttribute="bottom" constant="15" id="Tmz-O3-mGm"/>
                             <constraint firstItem="C01-eS-kUA" firstAttribute="centerX" secondItem="65Y-5s-q8N" secondAttribute="centerX" id="Uji-6g-kxO"/>
                             <constraint firstItem="533-wU-VWw" firstAttribute="centerX" secondItem="65Y-5s-q8N" secondAttribute="centerX" id="YZf-oJ-4Z7"/>
                             <constraint firstItem="533-wU-VWw" firstAttribute="leading" secondItem="x6D-KE-FTs" secondAttribute="leading" constant="40" id="Zj1-qG-WVw"/>
-                            <constraint firstItem="x6D-KE-FTs" firstAttribute="bottom" secondItem="533-wU-VWw" secondAttribute="bottom" constant="30" id="ZsX-p5-7Tg"/>
+                            <constraint firstItem="x6D-KE-FTs" firstAttribute="bottom" secondItem="533-wU-VWw" secondAttribute="bottom" constant="20" id="ZsX-p5-7Tg"/>
                             <constraint firstItem="x6D-KE-FTs" firstAttribute="trailing" secondItem="533-wU-VWw" secondAttribute="trailing" constant="40" id="nVi-di-nQQ"/>
                             <constraint firstItem="rnH-gp-XFm" firstAttribute="leading" secondItem="x6D-KE-FTs" secondAttribute="leading" id="nm7-VK-8S0"/>
                             <constraint firstItem="rnH-gp-XFm" firstAttribute="top" secondItem="x6D-KE-FTs" secondAttribute="top" id="piL-ys-Ttw"/>
@@ -571,6 +570,9 @@ WagChat!</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editprofilebackgroundColor" translatesAutoresizingMaskIntoConstraints="NO" id="wAD-R6-jcc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-zg-bhc">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="0hE-yo-rI5"/>
@@ -633,6 +635,7 @@ WagChat!</string>
                         <viewLayoutGuide key="safeArea" id="98E-ep-KZB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wAD-R6-jcc" firstAttribute="leading" secondItem="98E-ep-KZB" secondAttribute="leading" id="6NL-JB-pya"/>
                             <constraint firstItem="LUq-fb-3hJ" firstAttribute="leading" secondItem="98E-ep-KZB" secondAttribute="leading" constant="40" id="DS9-fg-r67"/>
                             <constraint firstItem="98E-ep-KZB" firstAttribute="trailing" secondItem="LUq-fb-3hJ" secondAttribute="trailing" constant="40" id="Lxp-vP-0Rp"/>
                             <constraint firstItem="LUq-fb-3hJ" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="QHQ-Me-ziY"/>
@@ -640,7 +643,10 @@ WagChat!</string>
                             <constraint firstAttribute="top" secondItem="E63-eT-ebj" secondAttribute="top" id="YHE-DC-L0S"/>
                             <constraint firstAttribute="leading" secondItem="E63-eT-ebj" secondAttribute="leading" id="ZUS-2J-G1s"/>
                             <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="250" id="gde-Yx-UbK"/>
+                            <constraint firstItem="98E-ep-KZB" firstAttribute="trailing" secondItem="wAD-R6-jcc" secondAttribute="trailing" id="hCh-Da-9a6"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="10" id="hwH-b2-XRw"/>
+                            <constraint firstAttribute="bottom" secondItem="wAD-R6-jcc" secondAttribute="bottom" id="rf8-Bh-Irw"/>
+                            <constraint firstItem="wAD-R6-jcc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" id="v6d-IR-10r"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DfD-Y6-eUl"/>
@@ -679,9 +685,10 @@ WagChat!</string>
     </scenes>
     <resources>
         <image name="Google" width="285" height="69"/>
+        <image name="editprofilebackgroundColor" width="267" height="319"/>
         <image name="google.png" width="18" height="18"/>
         <image name="more_clear_log_in" width="1080" height="1920"/>
-        <image name="newuserVC.gif" width="480" height="480"/>
+        <image name="newUserWelcomeScreen" width="1370" height="2436"/>
         <image name="pngkey.com-butt-png-2117336" width="434" height="423"/>
         <image name="wagchat-sign-up" width="700" height="1244"/>
         <image name="wagchatbackground" width="1280" height="1024"/>
