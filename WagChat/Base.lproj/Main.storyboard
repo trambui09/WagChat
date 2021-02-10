@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,6 +28,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="NGQ-kv-wsQ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
                                             <segue destination="jFn-9Z-sNq" kind="show" id="xPy-Jg-atT"/>
@@ -34,19 +36,25 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEH-iT-qhN">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ga2-Lm-WAv"/>
                                         </constraints>
-                                        <state key="normal" title="Log In"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="bkX-Ez-8Ea" kind="show" id="VKv-Od-p7a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-V4-dlR">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Log In with Google" image="google.png" backgroundImage="Google">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Log In with Google">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="g.circle.fill" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
                                             <action selector="googleSignInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1t-8W-PiU"/>
@@ -304,7 +312,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="533-wU-VWw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="533-wU-VWw">
                                 <rect key="frame" x="40" y="666" width="334" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bmn-s6-4dk"/>
@@ -684,9 +692,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Google" width="285" height="69"/>
         <image name="editprofilebackgroundColor" width="267" height="319"/>
-        <image name="google.png" width="18" height="18"/>
+        <image name="g.circle.fill" catalog="system" width="128" height="121"/>
         <image name="more_clear_log_in" width="1080" height="1920"/>
         <image name="newUserWelcomeScreen" width="1370" height="2436"/>
         <image name="pngkey.com-butt-png-2117336" width="434" height="423"/>
@@ -703,6 +710,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

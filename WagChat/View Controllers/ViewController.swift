@@ -27,8 +27,8 @@ class ViewController: UIViewController, GIDSignInDelegate  {
     
     func setUpElements() {
         Utilities.styleFilledButton(signUpButton)
-        Utilities.styleHollowButton(loginButton)
-        Utilities.styleHollowButton(googleSignInButton)
+        Utilities.styleFilledLogin(loginButton)
+        Utilities.styleFilledButtonCornerRadius(googleSignInButton)
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

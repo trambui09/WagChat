@@ -35,6 +35,25 @@ class Utilities {
         button.tintColor = UIColor.white
     }
     
+    static func styleFilledButtonCornerRadius(_ button:UIButton) {
+        button.layer.cornerRadius = 25.0
+        button.backgroundColor = #colorLiteral(red: 0.1325967501, green: 0.3743020498, blue: 1, alpha: 1)
+        
+//        let icon = UIImage(named: "google-1")!
+//           button.setImage(icon, for: .normal)
+//           button.imageView?.contentMode = .scaleAspectFit
+//           button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -40, bottom: 0, right: 0)
+        
+        
+    }
+    
+    static func styleFilledLogin(_ button:UIButton) {
+        button.layer.cornerRadius = 25.0
+        button.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        
+        
+    }
+    
     static func styleHollowButton(_ button:UIButton) {
         
         // Hollow rounded corner style
