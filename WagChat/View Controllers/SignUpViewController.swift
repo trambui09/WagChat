@@ -45,6 +45,7 @@ class SignUpViewController: UIViewController {
         button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 5, left: -24, bottom: 5, right: 15)
         button.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(15), height: CGFloat(25))
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(self.btnPasswordVisiblityClicked), for: .touchUpInside)
         passwordTextField.rightView = button
         passwordTextField.rightViewMode = .always

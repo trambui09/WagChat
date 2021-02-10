@@ -20,36 +20,39 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wagchatbackground" translatesAutoresizingMaskIntoConstraints="NO" id="bC4-sl-vX8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="t66-MD-MGg">
-                                <rect key="frame" x="40" y="506" width="334" height="190"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="t66-MD-MGg">
+                                <rect key="frame" x="40" y="516" width="334" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdK-8b-zQd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdK-8b-zQd">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="NGQ-kv-wsQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="Sign Up"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Sign Up">
+                                            <imageReference key="image" image="person.crop.circle.fill" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <segue destination="jFn-9Z-sNq" kind="show" id="xPy-Jg-atT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEH-iT-qhN">
-                                        <rect key="frame" x="0.0" y="70" width="334" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEH-iT-qhN">
+                                        <rect key="frame" x="0.0" y="65" width="334" height="50"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ga2-Lm-WAv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <imageReference key="image" image="arrowshape.turn.up.right.fill" catalog="system" symbolScale="large"/>
                                         </state>
                                         <connections>
                                             <segue destination="bkX-Ez-8Ea" kind="show" id="VKv-Od-p7a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5n-V4-dlR">
-                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="130" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Log In with Google">
@@ -68,13 +71,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WAG CHAT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRw-qp-c0H">
-                                <rect key="frame" x="158.33333333333334" y="310.66666666666669" width="97.666666666666657" height="114.66666666666669"/>
-                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="45"/>
+                                <rect key="frame" x="153" y="304.33333333333331" width="108.33333333333331" height="127.66666666666669"/>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="50"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngkey.com-butt-png-2117336" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGi-v0-AmZ">
-                                <rect key="frame" x="157" y="190.66666666666666" width="100" height="99.999999999999972"/>
+                                <rect key="frame" x="157" y="184.33333333333334" width="100" height="100.00000000000003"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="8ld-tm-IQ5"/>
                                     <constraint firstAttribute="width" constant="100" id="rRs-hm-w9O"/>
@@ -692,10 +695,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="editprofilebackgroundColor" width="267" height="319"/>
         <image name="g.circle.fill" catalog="system" width="128" height="121"/>
         <image name="more_clear_log_in" width="1080" height="1920"/>
         <image name="newUserWelcomeScreen" width="1370" height="2436"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pngkey.com-butt-png-2117336" width="434" height="423"/>
         <image name="wagchat-sign-up" width="700" height="1244"/>
         <image name="wagchatbackground" width="1280" height="1024"/>
