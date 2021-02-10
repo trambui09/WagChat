@@ -33,14 +33,27 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    @objc let button = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
-
+        
+        //dispaly password btn
+        passwordTextField.rightViewMode = .unlessEditing
+        
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: -24, bottom: 5, right: 15)
+        button.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(15), height: CGFloat(25))
+        button.addTarget(self, action: #selector(self.btnPasswordVisiblityClicked), for: .touchUpInside)
+        passwordTextField.rightView = button
+        passwordTextField.rightViewMode = .always
+        
+        
         // Do any additional setup after loading the view.
         setUpElements()
-
     }
+    
     
     func setUpElements() {
         
