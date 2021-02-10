@@ -107,7 +107,7 @@ class LogInViewController: UIViewController {
         }
     }
     
-    
+    // forgot password
     @IBAction func forgotPassButton_Tapped(_ sender: Any) {
         
         let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
@@ -132,7 +132,7 @@ class LogInViewController: UIViewController {
                     }
                 })
             }))
-        //PRESENT ALERT
+        //   PRESENT ALERT
         self.present(forgotPasswordAlert, animated: true, completion: nil)
         
     }
