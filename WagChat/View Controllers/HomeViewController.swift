@@ -10,16 +10,18 @@ import FirebaseDatabase
 import SDWebImage
 
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
  
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chatsButton: UIButton!
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     // initiate a variable to store users data
     var userData: [[String: String]] = []
-//    var userPhoto: [[String: String]] = []
+    var filteredUserData: [[String: String]]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // tableview methods
         tableView.delegate = self
         tableView.dataSource = self
+        // search bar
+        searchBar.delegate = self
+        filteredUserData = userData
+        
       
         // Do any additional setup after loading the view.
         setUpElements()
@@ -45,14 +51,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                     let user = ["username": username, "uid": uid, "photoUrl": photoUrl]
                     self.userData.append(user)
+//                    self.filteredUserData.append(user)
+                    self.filteredUserData = self.userData
 //                    self.userPhoto.append(["photoUrl": photoUrl])
                     
                 }
-//                DispatchQueue.main.async  {
+                DispatchQueue.main.async  {
                     self.tableView.reloadData()
                     let indexPath = IndexPath.init(row: 0, section: 0)
                     self.tableView.reloadRows(at: [indexPath], with: .fade)
-//                }
+                }
             }
         }
     }
@@ -60,13 +68,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // table row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        return userData.count
+//        return userData.count
+        return filteredUserData.count
     }
     // table cell
     // opened 1 prototype cell - gave reused identifier PostCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
-        let user = userData[indexPath.row]
+//        let user = userData[indexPath.row]
+        let user = filteredUserData[indexPath.row]
         tableView.reloadRows(at: [indexPath], with: .none)
 //        let userPhotoUrl = userPhoto[indexPath.row]
         
@@ -101,7 +111,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = userData[indexPath.row]
+//        let user = userData[indexPath.row]
+        let user = filteredUserData[indexPath.row]
         let profileDetailsViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileDetailsViewController) as? ProfileDetailsViewController
         
         // transfer the user uid data from homeViewController to the profileDetailsViewController
@@ -140,7 +151,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        let user = userData[indexPath.row]
+//        let user = userData[indexPath.row]
+        let user = filteredUserData[indexPath.row]
 
 
         chatViewController?.user2Name = user["username"]!
@@ -159,6 +171,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
 //        return .none
 //    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // code to run when the searchbar changes
+        filteredUserData = []
+        
+        if searchText == "" {
+            return filteredUserData = userData
+        }
+        else {
+            for user in userData {
+                if user["username"]!.lowercased().contains(searchText.lowercased()) {
+                    filteredUserData.append(user)
+                }
+            }
+            
+        }
+        // reloading the tableview and get the images to appear
+        self.tableView.reloadData()
+//        let indexPath = IndexPath.init(row: 0, section: 0)
+//        self.tableView.reloadRows(at: [indexPath], with: .fade)
+    }
     
     func setUpElements() {
         Utilities.styleFilledButton(logOutButton)
