@@ -306,7 +306,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to WagChat!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C01-eS-kUA">
-                                <rect key="frame" x="40" y="200" width="334" height="34.666666666666657"/>
+                                <rect key="frame" x="40" y="170" width="334" height="34.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -336,7 +336,7 @@
                             <constraint firstItem="51R-3Z-WTw" firstAttribute="leading" secondItem="65Y-5s-q8N" secondAttribute="leading" constant="40" id="Ex8-MY-PkX"/>
                             <constraint firstItem="C01-eS-kUA" firstAttribute="leading" secondItem="x6D-KE-FTs" secondAttribute="leading" constant="40" id="MAt-YT-EW4"/>
                             <constraint firstItem="x6D-KE-FTs" firstAttribute="trailing" secondItem="C01-eS-kUA" secondAttribute="trailing" constant="40" id="QQX-9x-oph"/>
-                            <constraint firstItem="C01-eS-kUA" firstAttribute="top" secondItem="x6D-KE-FTs" secondAttribute="top" constant="200" id="Rkv-Wk-eBB"/>
+                            <constraint firstItem="C01-eS-kUA" firstAttribute="top" secondItem="x6D-KE-FTs" secondAttribute="top" constant="170" id="Rkv-Wk-eBB"/>
                             <constraint firstItem="533-wU-VWw" firstAttribute="top" secondItem="51R-3Z-WTw" secondAttribute="bottom" constant="15" id="Tmz-O3-mGm"/>
                             <constraint firstItem="C01-eS-kUA" firstAttribute="centerX" secondItem="65Y-5s-q8N" secondAttribute="centerX" id="Uji-6g-kxO"/>
                             <constraint firstItem="533-wU-VWw" firstAttribute="centerX" secondItem="65Y-5s-q8N" secondAttribute="centerX" id="YZf-oJ-4Z7"/>
@@ -597,7 +597,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LUq-fb-3hJ">
-                                <rect key="frame" x="40" y="244.99999999999997" width="334" height="260.33333333333326"/>
+                                <rect key="frame" x="40" y="285" width="334" height="260.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dog Information" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99f-hP-zyH">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="35"/>
@@ -657,7 +657,7 @@
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="centerX" secondItem="E63-eT-ebj" secondAttribute="centerX" id="ShQ-Bl-PGT"/>
                             <constraint firstAttribute="top" secondItem="E63-eT-ebj" secondAttribute="top" id="YHE-DC-L0S"/>
                             <constraint firstAttribute="leading" secondItem="E63-eT-ebj" secondAttribute="leading" id="ZUS-2J-G1s"/>
-                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="180" id="gde-Yx-UbK"/>
+                            <constraint firstItem="LUq-fb-3hJ" firstAttribute="top" secondItem="cEy-zg-bhc" secondAttribute="bottom" constant="220" id="gde-Yx-UbK"/>
                             <constraint firstItem="98E-ep-KZB" firstAttribute="trailing" secondItem="wAD-R6-jcc" secondAttribute="trailing" id="hCh-Da-9a6"/>
                             <constraint firstItem="cEy-zg-bhc" firstAttribute="top" secondItem="98E-ep-KZB" secondAttribute="top" constant="10" id="hwH-b2-XRw"/>
                             <constraint firstAttribute="bottom" secondItem="wAD-R6-jcc" secondAttribute="bottom" id="rf8-Bh-Irw"/>

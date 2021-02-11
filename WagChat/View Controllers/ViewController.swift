@@ -21,9 +21,22 @@ class ViewController: UIViewController, GIDSignInDelegate  {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpElements();
+        viewWillDisappear(false)
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().delegate = self
     }
+    // hide navigation item bar from VC
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    // Hide the Navigation Bar
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+    // Show the Navigation Bar
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+        }
     
     func setUpElements() {
         Utilities.styleFilledButton(signUpButton)
