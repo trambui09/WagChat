@@ -468,7 +468,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wagchatbackground" translatesAutoresizingMaskIntoConstraints="NO" id="fba-As-a7l">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="potentialpofiledetails" translatesAutoresizingMaskIntoConstraints="NO" id="fba-As-a7l">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNq-Gg-UCu">
@@ -706,6 +706,7 @@
         <image name="newUserWelcomeScreen" width="1370" height="2436"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pngkey.com-butt-png-2117336" width="434" height="423"/>
+        <image name="potentialpofiledetails" width="343" height="671"/>
         <image name="wagchat-sign-up" width="700" height="1244"/>
         <image name="wagchatbackground" width="1280" height="1024"/>
         <systemColor name="systemBackgroundColor">
