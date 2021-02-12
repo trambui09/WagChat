@@ -177,20 +177,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         filteredUserData = []
         
         if searchText == "" {
-            return filteredUserData = userData
-        }
-        else {
+            filteredUserData = userData
+        } else {
             for user in userData {
                 if user["username"]!.lowercased().contains(searchText.lowercased()) {
                     filteredUserData.append(user)
                 }
             }
-            
         }
         // reloading the tableview and get the images to appear
         self.tableView.reloadData()
-//        let indexPath = IndexPath.init(row: 0, section: 0)
-//        self.tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
     func setUpElements() {
