@@ -23,6 +23,13 @@
 
 ## Technologies/Dependencies 
 
+- [Swift](https://developer.apple.com/swift/)
+- [Xcode](https://developer.apple.com/support/xcode/)
+- [Firestore](https://firebase.google.com/docs/firestore)
+- [GoogleSignIn](https://cocoapods.org/pods/GoogleSignIn)
+- [MessageKit](https://messagekit.github.io/)
+- [SDWebImage](https://cocoapods.org/pods/SDWebImage)
+
 ## Database Structure and Considerations
 
   Google Firestore was used for WagChat’s database. Firestore, a non-relational database, was chosen for its flexibility and user friendly experience. For WagChat, there are two major collections to keep track of the data. The “Users” collection contains documents linked to an authenticated user and keeps track of the user's profile information (location, photoUrl, dogInfo, username, and their about section). 
