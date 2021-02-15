@@ -7,6 +7,12 @@
 
 ## Walkthrough
 
+- download [Xcode](https://developer.apple.com/support/xcode/)
+- Fork and clone this repo 
+- Open terminal and navigate to project folder 
+- Install the project's dependencies by running `pod install` on your terminal
+- Open `ios-app-particle-setup.xcworkspace` and run the project on selected device or simulator
+
 ## Usage/Features
 
 ## Requirements/Installation 
