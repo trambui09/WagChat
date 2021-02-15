@@ -43,7 +43,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+//                    print("\(document.documentID) => \(document.data())")
 //                  print("\(document.data()["username"]!) - \(document.data()["topics"]!)")
                     let username = document.data()["username"] as! String
                     let uid = document.data()["uid"] as! String
@@ -121,6 +121,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // push to the current nav controller
         self.navigationController?.pushViewController(profileDetailsViewController!, animated: true)
         
+    }
+    
+    // unhighlight/deselect cell upon returning to VC
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        }
     }
     
     private func handleMessage() {
