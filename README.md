@@ -17,6 +17,10 @@
 
 ## Requirements/Installation 
 
+- [iOS 14.3+](https://support.apple.com/en-us/HT211808)
+- [Xcode 12.3+](https://developer.apple.com/support/xcode/)
+- [Pod](https://cocoapods.org/)
+
 ## Technologies/Dependencies 
 
 ## Database Structure and Considerations
