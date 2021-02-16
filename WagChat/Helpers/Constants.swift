@@ -1,7 +1,3 @@
-//
-//  Constants.swift
-//  WagChat
-
 
 import Foundation
 

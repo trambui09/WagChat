@@ -51,9 +51,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                     let user = ["username": username, "uid": uid, "photoUrl": photoUrl]
                     self.userData.append(user)
-//                    self.filteredUserData.append(user)
                     self.filteredUserData = self.userData
-//                    self.userPhoto.append(["photoUrl": photoUrl])
                     
                 }
                 DispatchQueue.main.async  {
@@ -67,8 +65,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // table row
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-//        return userData.count
+        
         return filteredUserData.count
     }
     // table cell
@@ -78,10 +75,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        let user = userData[indexPath.row]
         let user = filteredUserData[indexPath.row]
         tableView.reloadRows(at: [indexPath], with: .none)
-//        let userPhotoUrl = userPhoto[indexPath.row]
         
-        // how to check if username is the current username so we can put a marker
-        // to say it's you
+        // display YOU marker to identify current user
         if Auth.auth().currentUser?.uid == user["uid"]  {
             cell?.textLabel?.text = "\(user["username"] ?? "YOU") - YOU"
         } else {
@@ -94,8 +89,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // attach a circle avatar image next to the username
         cell?.imageView?.layer.cornerRadius = cell?.imageView?.frame.size.width ?? 60 / 2;
         cell?.imageView?.clipsToBounds = true;
-        // do we need a UIImage view?
-        
+   
 
         cell?.imageView?.sd_setImage(with: URL(string: (user["photoUrl"])! ), placeholderImage: UIImage(named:"https://icon-library.com/images/corgi-icon/corgi-icon-7.jpg"))
 
@@ -173,14 +167,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return UISwipeActionsConfiguration(actions: [action])
     }
     
-    
-    
-    // to prevent the delete leading
-//    func tableView(_ tableView: UITableView,
-//                   editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .none
-//    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // code to run when the searchbar changes
         filteredUserData = []
@@ -215,15 +201,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } catch let signOutError as NSError {
               print ("Error signing out: %@", signOutError)
             }
-            
-            // bring up the welcome screen
-//
-//            let welcomeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.welcomeViewController) as? ViewController
-//
-//            self.view.window?.rootViewController = welcomeViewController
-//            self.view.window?.makeKeyAndVisible()
-//
-            
+                        
             let firstNavigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.firstNavigationController) as? UINavigationController
             
             self.view.window?.rootViewController = firstNavigationViewController

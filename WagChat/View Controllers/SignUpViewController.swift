@@ -18,19 +18,10 @@ class SignUpViewController: UIViewController {
 //    @IBOutlet var lable: UILable!
     
     @IBOutlet weak var usernameTextField: UITextField!
-    
-//    @IBOutlet weak var locationTextField: UITextField!
-//
-//    @IBOutlet weak var dogInfoTextField: UITextField!
-//
-//    @IBOutlet weak var topicsTextField: UITextField!
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var signUpButton: UIButton!
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     @objc let button = UIButton(type: .custom)
@@ -39,7 +30,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         title = "Sign Up"
         
-        //dispaly password btn
+        //display password btn
         passwordTextField.rightViewMode = .unlessEditing
         
         button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
@@ -71,14 +62,6 @@ class SignUpViewController: UIViewController {
         
         // hide the error
         errorLabel.alpha = 0
-        
-//        Utilities.styleTextField(usernameTextField)
-//        Utilities.styleTextField(locationTextField)
-//        Utilities.styleTextField(dogInfoTextField)
-//        Utilities.styleTextField(topicsTextField)
-//        Utilities.styleTextField(emailTextField)
-//        Utilities.styleTextField(passwordTextField)
-        
         Utilities.styleFilledButton(signUpButton)
     }
     
@@ -104,7 +87,7 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func signUpTapped(_ sender: Any) {
-        // validate the feilds
+        // validate the fields
         let error = validateFields()
         
         if error != nil {
@@ -113,11 +96,7 @@ class SignUpViewController: UIViewController {
         else {
             
             // create cleaned versions of the data
-            
             let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//            let location = locationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//            let dogInfo = dogInfoTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//            let topics = topicsTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
@@ -139,7 +118,7 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
-                    // transition to the home screen
+                    // transition to newUserWelcomeVC
                     self.transitionToHome()
                 }
             }
@@ -153,17 +132,7 @@ class SignUpViewController: UIViewController {
     
     func transitionToHome() {
         
-        // reference to HomeVC
-//        let navigationViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.navigationController) as? UINavigationController
-//
-//        self.view.window?.rootViewController = navigationViewController
-//        self.view.window?.makeKeyAndVisible()
-        
-        // go to profile to fill out
-//        let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
-//
-//        self.view.window?.rootViewController = profileViewController
-//        self.view.window?.makeKeyAndVisible()
+        // reference to NewUserWelcomeVC
         
         let newUserViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.newUserWelcomeVC) as? NewUserWelcomeViewController
 

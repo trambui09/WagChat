@@ -48,8 +48,8 @@ class ViewController: UIViewController, GIDSignInDelegate  {
     //Sign in functionality will be handled here
         
         if let error = error {
-        print(error.localizedDescription)
-        return
+            print(error.localizedDescription)
+            return
         }
         
         guard let auth = user.authentication else { return }
@@ -69,17 +69,6 @@ class ViewController: UIViewController, GIDSignInDelegate  {
             let newUser = res?.additionalUserInfo?.isNewUser
             
             if (newUser!) {
-                    // sign up
-//                let user: GIDGoogleUser = GIDSignIn.sharedInstance()!.currentUser
-    //            let db = Firestore.firestore()
-    //
-    //            db.collection("users").addDocument(data: ["username":user.profile.name, "uid":authResult!.user.uid ]) { (error) in
-    //                if error != nil {
-    //                    // show error message
-    //                    print("Error saving user data")
-    //                }
-    //            }
-                
                 let db = Firestore.firestore()
                             db.collection("users").document(String((res?.user.uid)!)).setData([
                                 "uid" : String((res?.user.uid)!),
@@ -91,12 +80,6 @@ class ViewController: UIViewController, GIDSignInDelegate  {
                                     print("Error saving user data")
                                 }
                             }
-                
-//                let profileViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.profileViewController) as? ProfileViewController
-//
-//                self.view.window?.rootViewController = profileViewController
-//                self.view.window?.makeKeyAndVisible()
-                
                 
                 let newUserViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.newUserWelcomeVC) as? NewUserWelcomeViewController
 
@@ -119,7 +102,6 @@ class ViewController: UIViewController, GIDSignInDelegate  {
     @IBAction func googleSignInPressed(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
     }
-    
     
 }
 

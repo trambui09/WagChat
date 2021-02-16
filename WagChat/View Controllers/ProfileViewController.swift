@@ -1,9 +1,7 @@
 //
 //  ChatsViewController.swift
 //  WagChat
-//
-//  Created by Tram Bui on 1/28/21.
-//
+
 
 import UIKit
 import FirebaseAuth
@@ -112,7 +110,6 @@ class ProfileViewController: UIViewController {
     // populate text fields from firebase
     
     func populateTextFields() {
-//        dogInfo.text = "pug"
         
         let currentUserUID = (Auth.auth().currentUser?.uid)!
         
@@ -121,8 +118,6 @@ class ProfileViewController: UIViewController {
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
                 // need a check if the fields are nil or not
                 if document.data()?["dogInfo"] != nil && document.data()?["location"] != nil && document.data()?["about"] != nil  {
                     self.dogInfo.text = document.data()?["dogInfo"]! as? String
@@ -134,10 +129,6 @@ class ProfileViewController: UIViewController {
                 print("Document does not exist")
             }
         }
-        // get the current user UID
-        // get the fields saved in DB, load the data
-        // set it to the fields.text
-    
     }
     
     func setUpElements() {
@@ -154,7 +145,6 @@ class ProfileViewController: UIViewController {
         if dogInfo.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || location.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || about.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Please fill in all fields"
         }
-        
         
         return nil
     }
@@ -264,11 +254,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
    // when user take a photo/select
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            picker.dismiss(animated: true, completion: nil)
-            print(info)
-            guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-                   return
-               }
+        picker.dismiss(animated: true, completion: nil)
+        print(info)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
         
         // get the bytes for img
         guard let imageData = selectedImage.pngData() else {
@@ -300,21 +290,21 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                     let db = Firestore.firestore()
                     db.collection("users").document(String((Auth.auth().currentUser?.uid)!)).setData([
                         "photoUrl" : urlString
-                      
+                        
                     ], merge: true) { (error) in
                         if error != nil {
                             // show error message
                             print("Error saving user data")
                         }
                     }
-//                    showSuccess("Profile Edited!")
+                    //                    showSuccess("Profile Edited!")
                 })
                 
             })
         
         self.imageView.image = selectedImage
     }
-   
+    
     // when user cancel taking picture/photo selection
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
