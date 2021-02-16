@@ -38,3 +38,6 @@ One of WagChat’s core functionalities is to be able to have a private conversa
 ![Screen Shot 2021-02-11 at 2 40 19 PM](https://user-images.githubusercontent.com/62119967/107975134-412d1200-6f7d-11eb-940d-e822b2a2eb91.png)
 ![Screen Shot 2021-02-11 at 2 45 21 PM](https://user-images.githubusercontent.com/62119967/107975138-412d1200-6f7d-11eb-830f-fcee7aa63b65.png)
 
+## Contributors
+- [Tram Bui](https://github.com/trambui09?tab=repositories)
+- [Mona Rahmanimehr](https://github.com/monarahmani)
