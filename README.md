@@ -1,9 +1,10 @@
 # WagChat
-  WagChat is a mobile app that connects dog owners based on what is most important to them to talk and turns their daily walk into something fun and beneficial for them and their pet. 
+
+  WagChat is a mobile app that connects dog owners so they can message each other and schedule a time to walk their dogs together. It turns their daily walks into something fun and beneficial for the user and their pets.
 
 ## Problem Statement and App Solution
 
-  Since the Covid-19 pandemic started, animal shelters have seen an increase in pet adoptions compared to the year prior. Shelter Animals Count organization has been keeping track of shelter and adoption numbers. They have found that across the 500 rescue organizations tracked in the US, there has been 26,000 more pet adoptions in 2020 compared to 2019, which accounts for a 15% increase in adoptions. The upward trend in pet adoptions, particularly dog adoptions coupled with a few other things like people staying home more and socially distancing to prevent the spread of COVID is where our app, Wagchat can come into play. We realize that the pandemic has upended a lot of normal activities. It has been almost a year since we’ve gone into lockdown in the US. People are more prone to feeling isolated and lonely because they are staying home more and doing social distancing. The goal of WagChat is to connect dog owners with each other so they can schedule a time to walk their dogs together. We hope that with WagChat, people can take their dog walking routines and add a safe and social side to connect with their communities and improve their physical and mental health. 
+  Since the Covid-19 pandemic started, animal shelters have seen an increase in pet adoptions compared to the year prior. The upward trend in pet adoptions, particularly dog adoptions coupled with a few other things like people staying home more and socially distancing to prevent the spread of COVID is where our app, Wagchat can come into play. We realize that the pandemic has upended a lot of normal activities. People are more prone to feeling isolated and lonely because they are staying home more and they are socially distancing. We hope that with WagChat, people can take their dog walking routines and add a safe and social side to connect with their communities and improve their physical and mental health. 
 
 ## Walkthrough
 
