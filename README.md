@@ -7,6 +7,12 @@
 
 ## Walkthrough
 
+![Wagchat screenshots](https://user-images.githubusercontent.com/62119967/108138094-da921c00-7082-11eb-89a7-8858434f7fd4.png)
+
+![Wagchat screenshots (1)](https://user-images.githubusercontent.com/62119967/108138096-dcf47600-7082-11eb-93d0-e75aabc838e0.png)
+
+
+Youtube Video Link: Click to play
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YoERXZpv0EA/0.jpg)](https://www.youtube.com/watch?v=YoERXZpv0EA)
 
