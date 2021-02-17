@@ -11,11 +11,13 @@
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YoERXZpv0EA/0.jpg)](https://www.youtube.com/watch?v=YoERXZpv0EA)
 
 
-## Requirements/Installation 
+## Requirements
 
 - [iOS 14.3+](https://support.apple.com/en-us/HT211808)
 - [Xcode 12.3+](https://developer.apple.com/support/xcode/)
 - [Pod](https://cocoapods.org/)
+
+## Intallation
 
 - download [Xcode](https://developer.apple.com/support/xcode/)
 - Fork and clone this repo 
